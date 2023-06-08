@@ -20,7 +20,7 @@
   <li>Navigate to the project directory.<br><pre>cd desafio-frontend</pre></li>
   <li>Install the dependencies.<br><pre>npm install</pre></li>
   <li>Start the provided GraphQL API (which should be located in the <code>api</code> folder).<br><pre>cd api<br>yarn start</pre></li>
-  <li>Start the project.<br><pre>yarn dev</pre></li>
+  <li>Start the project.<br><pre>npm run dev</pre></li>
 </ol>
 
 <p>You can now access <a href="http://localhost:3000">localhost:3000</a> in your browser.</p>

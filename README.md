@@ -16,7 +16,7 @@
 <h2>How to install and run the project</h2>
 
 <ol>
-  <li>Clone the repository or download the ZIP.<br><pre>git clone &lt;mauricioDallOnder/desafio-frontendL&gt;</pre></li>
+  <li>Clone the repository or download the ZIP.<br><pre>git clone https://github.com/mauricioDallOnder/desafio-frontend.git</pre></li>
   <li>Navigate to the project directory.<br><pre>cd desafio-frontend</pre></li>
   <li>Install the dependencies.<br><pre>npm install</pre></li>
   <li>Start the provided GraphQL API (which should be located in the <code>api</code> folder).<br><pre>cd api<br>yarn start</pre></li>

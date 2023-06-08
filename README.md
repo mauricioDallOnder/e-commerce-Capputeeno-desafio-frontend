@@ -1,4 +1,4 @@
-<h1>Challenge-Frontend</h1>
+<h1>E-Commerce Challenge-Frontend</h1>
 
 <h2>Description</h2>
 

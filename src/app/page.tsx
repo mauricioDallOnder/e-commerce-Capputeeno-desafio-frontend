@@ -4,6 +4,7 @@ import { useGetUsersQuery } from "@/redux/services/userApi";
 import { decrement, increment, reset } from "@/redux/features/counterSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { FilterBar } from "@/components/filter-bar/filter-bar";
+import { ProductList } from "@/components/product-list";
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
     <main style={{ maxWidth: 1300, marginInline: "auto", padding: 20 }}>
      
      <FilterBar/>
-
+    <ProductList/>
 
     </main>
   );

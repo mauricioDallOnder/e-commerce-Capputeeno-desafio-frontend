@@ -2,10 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counterSlice";
 import { userApi } from "./services/userApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import productSlice from "./features/productSlice";
 
 export const store = configureStore({
   reducer: {
     counterReducer,
+    productSlice,
     [userApi.reducerPath]: userApi.reducer,
   },
   devTools: process.env.NODE_ENV !== "production",

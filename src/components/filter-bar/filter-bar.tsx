@@ -1,31 +1,39 @@
 import { useState } from "react";
-import { ActiveBar, ButtonContainer, StyledButton, ProductFilterBar, DropDownMenu} from "./filter-barStyle";
+import { ActiveBar, ButtonContainer, StyledButton, ProductFilterBar} from "./filterBarStyle";
 import React from "react";
+import { useAppDispatch } from "@/redux/hooks";
+import { setFilterCategory } from "@/redux/features/productSlice";
+import { DropDownMenu } from "./dropdown-filter";
 
 export function FilterBar() {
-    const [selectedButton, setSelectedButton] = useState("");
-    return (
-      <ProductFilterBar>
-        <div style={{display:'flex',gap:'40px'}}>
-          {['todos os produtos', 'camisetas', 'canecas'].map((button) => (
-            <ButtonContainer key={button}>
-              <StyledButton
-                onClick={() => setSelectedButton(button)}
-                selected={selectedButton === button}
-              >
-                {button}
-              </StyledButton>
-              {selectedButton === button && <ActiveBar />}
-            </ButtonContainer>
-          ))}
-        </div>
-        <DropDownMenu>
-        <option>organizar por</option>
-          <option>Novidades</option>
-          <option>Preço: Maior - menor</option>
-          <option>Preço: Menor - maior</option>
-          <option>Mais Vendidos</option>
-        </DropDownMenu>
-      </ProductFilterBar>
-    );
-  }
+  const [selectedButton, setSelectedButton] = useState("");
+  const dispatch = useAppDispatch();
+
+  const handleClick = (category: string, button: string) => {
+    setSelectedButton(button);
+    dispatch(setFilterCategory(category));
+  };
+
+  return (
+    <ProductFilterBar>
+      <div style={{display:'flex',gap:'40px'}}>
+        {[
+          { label: 'todos os produtos', category: 'all' },
+          { label: 'camisetas', category: 't-shirts' },
+          { label: 'canecas', category: 'mugs' }
+        ].map((button) => (
+          <ButtonContainer key={button.label}>
+            <StyledButton
+              onClick={() => handleClick(button.category, button.label)}
+              selected={selectedButton === button.label}
+            >
+              {button.label}
+            </StyledButton>
+            {selectedButton === button.label && <ActiveBar />}
+          </ButtonContainer>
+        ))}
+      </div>
+      <DropDownMenu/>
+    </ProductFilterBar>
+  );
+}

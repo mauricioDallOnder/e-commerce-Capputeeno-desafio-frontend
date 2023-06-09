@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ActiveBar, ButtonContainer, StyledButton, ProductFilterBar} from "./filterBarStyle";
+import { ActiveBar, ButtonContainer, StyledButton, ProductFilterBar } from "./filterBarStyle";
 import React from "react";
-import { useAppDispatch } from "@/redux/hooks";
+import { useAppDispatch } from "../../../hooks/Reduxhooks";
 import { setFilterCategory } from "@/redux/features/productSlice";
 import { DropDownMenu } from "./dropdown-filter";
 
@@ -16,7 +16,7 @@ export function FilterBar() {
 
   return (
     <ProductFilterBar>
-      <div style={{display:'flex',gap:'40px'}}>
+      <div style={{ display: 'flex', gap: '40px' }}>
         {[
           { label: 'todos os produtos', category: 'all' },
           { label: 'camisetas', category: 't-shirts' },
@@ -33,7 +33,7 @@ export function FilterBar() {
           </ButtonContainer>
         ))}
       </div>
-      <DropDownMenu/>
+      <DropDownMenu />
     </ProductFilterBar>
   );
 }

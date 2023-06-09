@@ -4,7 +4,7 @@ import { Saira_Stencil_One } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import CartControl from './cart-total-amount'
-import { useAppDispatch } from "@/redux/hooks";
+import { useAppDispatch } from "../../../hooks/Reduxhooks";
 import { ChangeEvent, useState } from "react";
 import { setFilter } from "@/redux/features/productSlice";
 

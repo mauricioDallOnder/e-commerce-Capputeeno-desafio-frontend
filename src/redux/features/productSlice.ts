@@ -1,17 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
+import { Product } from '../../../hooks/useProductsHook';
 
 export type SortMethod = 'novidades' | 'preco-maior' | 'preco-menor' | 'mais-vendidos' | '';
-
-export interface Product {
-  name: string;
-  description: string;
-  image_url: string;
-  category: string;
-  price_in_cents: number;
-  created_at: Date;
-  sales: number;
-}
 
 interface ProductState {
   value: Product[];
@@ -71,9 +62,9 @@ export const productSlice = createSlice({
 
 export const { addProducts, setFilter, setFilterCategory, setSortMethod, sortProducts } = productSlice.actions;
 
-export const selectProducts = (state: RootState) => state.productSlice.value;
-export const selectFilter = (state: RootState) => state.productSlice.filter;
-export const selectFilterCategory = (state: RootState) => state.productSlice.filterCategory;
-export const selectSortMethod = (state: RootState) => state.productSlice.sortMethod;
+export const selectProducts = (state: RootState) => state.products.value;
+export const selectFilter = (state: RootState) => state.products.filter;
+export const selectFilterCategory = (state: RootState) => state.products.filterCategory;
+export const selectSortMethod = (state: RootState) => state.products.sortMethod;
 
 export default productSlice.reducer;

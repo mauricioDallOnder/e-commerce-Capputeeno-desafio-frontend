@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Providers } from "@/redux/provider";
+import { Providers } from "@/redux/services/provider";
 import HeaderComponent from "@/components/header/header";
 import { Saira } from 'next/font/google'
 const saira = Saira({ 

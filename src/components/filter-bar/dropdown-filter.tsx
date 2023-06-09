@@ -1,18 +1,22 @@
 import { ArrowIcon } from "@/assets/icons/arrow-icon";
 import { FilterContainer, PriorityFilter, PriorityFilterItem } from "./dropDownStyle";
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { Product, addProducts, selectProducts, setSortMethod, sortProducts, selectSortMethod, SortMethod } from "@/redux/features/productSlice";
-import { allProducts } from "@/utils/data";
+import { useAppDispatch, useAppSelector } from "../../../hooks/Reduxhooks";
+import { addProducts, setSortMethod, sortProducts, selectSortMethod, SortMethod } from "@/redux/features/productSlice";
+import { useProducts } from "../../../hooks/useProductsHook";
+
 
 export function DropDownMenu() {
     const [isOpen, setIsOpen] = useState(false);
     const sortMethod = useAppSelector(selectSortMethod);
+    
+    const productsList = useProducts(); // usar o hook aqui
     const dispatch = useAppDispatch();
-
     useEffect(() => {
-        dispatch(addProducts(allProducts));
-    }, [dispatch]);
+        dispatch(addProducts(productsList));
+      }, [dispatch, productsList]);
+  
+    
 
     const handleSortMethodChange = (newMethod: SortMethod) => {
         dispatch(setSortMethod(newMethod));

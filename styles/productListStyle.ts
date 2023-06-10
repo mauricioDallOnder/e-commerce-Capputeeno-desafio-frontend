@@ -1,0 +1,41 @@
+import styled from 'styled-components'
+
+type ButtonProps = {
+  selected?: boolean
+}
+
+export const ProductCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 256px); /* Cria 4 colunas iguais */
+  grid-gap: 32px; /* Espaço entre os itens */
+  width: 100%;
+  margin-top: 32px;
+`
+
+export const PaginationButton = styled.button<ButtonProps>`
+  width: 32px;
+  height: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  /* Shapes Light / 88 Gray */
+  background: #e9e9f0;
+  border-radius: 8px;
+  border: ${(props) => (props.selected ? '1px solid #FFA585' : 'none')};
+  cursor: pointer;
+  margin-left: 4px;
+
+  p {
+    width: 24px;
+    height: 24px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+
+    /* identical to box height, or 24px */
+
+    text-align: center;
+    text-transform: uppercase;
+    color: ${(props) => (props.selected ? '#FFA585' : '#737380')};
+  }
+`

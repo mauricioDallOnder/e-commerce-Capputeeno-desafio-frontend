@@ -7,8 +7,9 @@ import {
   selectProducts,
   selectFilterCategory,
 } from '@/redux/features/productSlice'
-import { ProductCart } from './productCart'
+import { ProductCard } from './productCard'
 import { Pagination } from './Pagination'
+import Link from 'next/link'
 
 export function ProductList() {
   const products = useAppSelector(selectProducts)
@@ -43,16 +44,18 @@ export function ProductList() {
       products={filteredProducts}
       itemsPerPage={itemsPerPage}
       renderProduct={(product) => (
-        <ProductCart
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          image_url={product.image_url}
-          price_in_cents={product.price_in_cents}
-          category={product.category}
-          created_at={product.created_at}
-          sales={product.sales}
-        />
+        <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            image_url={product.image_url}
+            price_in_cents={product.price_in_cents}
+            category={product.category}
+            created_at={product.created_at}
+            sales={product.sales}
+          />
+        </Link>
       )}
     />
   )

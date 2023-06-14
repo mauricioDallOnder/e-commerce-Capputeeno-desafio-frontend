@@ -4,7 +4,7 @@ import { Card } from '../../styles/productCartStyle'
 import { Product } from '../../hooks/useProductsHook'
 import { formatPrice } from '../../utils/formatPrice'
 
-interface ProductCartProps extends Product {
+export interface ProductCardProps extends Product {
   id: string
   name: string
   description?: string
@@ -12,12 +12,12 @@ interface ProductCartProps extends Product {
   price_in_cents: number
 }
 
-export function ProductCart({
+export function ProductCard({
   id,
   name,
   image_url,
   price_in_cents,
-}: ProductCartProps) {
+}: ProductCardProps) {
   return (
     <Card>
       <img src={image_url} alt={name} />

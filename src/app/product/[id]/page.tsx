@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { addProducts } from '@/redux/features/productSlice'
 import { useAppDispatch } from '../../../../hooks/Reduxhooks'
 import { useProducts } from '../../../../hooks/useProductsHook'
+import { addToCart } from '@/redux/features/ShoppingCartSlice'
 
 export default function NotePage() {
   const pathname = usePathname()
@@ -19,7 +20,12 @@ export default function NotePage() {
   }, [dispatch, productsList])
 
   // Filtrar a lista de produtos para obter apenas o produto com a ID da URL
-  const product = productsList.find((item) => item.id === id)
+  const product = productsList.find((item) => item.id === id)!
+
+  // adicionar item ao carrinho:
+  const handleAddToCart = () => {
+    dispatch(addToCart(product))
+  }
 
   // Caso o produto não seja encontrado ou ainda não tenha sido carregado
   if (!product) {
@@ -28,15 +34,15 @@ export default function NotePage() {
 
   return (
     <div>
-      <button type="button" onClick={() => router.push('/')}>
-        home
+      <button type="button" onClick={() => router.push(`/`)}>
+        voltar
       </button>
       <div>
         <h3>{product.name}</h3>
         <h5>{product.description}</h5>
         <img src={product.image_url} alt={product.name} />
       </div>
-      <button type="button" onClick={() => ''}>
+      <button type="button" onClick={handleAddToCart}>
         Adicionar ao carrinho
       </button>
     </div>

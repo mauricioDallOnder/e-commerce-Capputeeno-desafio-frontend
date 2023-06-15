@@ -1,21 +1,29 @@
 import styled from 'styled-components'
 
-export const PageLayoutContainer = styled.div`
+export const CartPageContainer = styled.div`
   padding: 12px 24px;
   background-color: var(--bg-primary);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    padding: 12px; // Reduz o preenchimento lateral
+  }
 `
 
-export const Container = styled.div`
+export const CartContainer = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
   gap: 32px;
-  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
-    grid-template-columns: 2fr 1fr;
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    grid-template-columns: 1fr; // Ajusta o layout para uma coluna
+    gap: 24px; // Reduz o espaço entre os elementos
   }
 `
 
@@ -37,6 +45,17 @@ export const CartListContainer = styled.div`
 
     span {
       font-weight: 600;
+    }
+  }
+
+  @media (max-width: 480px) {
+    // Tela de celular
+    h3 {
+      font-size: 20px; // Reduz o tamanho da fonte
+    }
+
+    p {
+      font-size: 14px; // Reduz o tamanho da fonte
     }
   }
 `

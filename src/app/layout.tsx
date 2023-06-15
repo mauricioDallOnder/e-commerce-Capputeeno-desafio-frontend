@@ -1,8 +1,9 @@
 import './globals.css'
-import { Providers } from '@/redux/services/provider'
-import HeaderComponent from '@/components/header'
 import { Saira } from 'next/font/google'
 import { ReactNode } from 'react'
+import { Providers } from '@/redux/services/Provider'
+import HeaderComponent from '@/components/Header'
+
 const saira = Saira({
   weight: ['300', '400', '500', '600'],
   subsets: ['latin'],

@@ -6,7 +6,7 @@ import {
   OrderDetailsContainer,
   RegularText,
   TitleText,
-} from '../../../styles/pageOrderConfirmedStyle'
+} from '../../../styles/OrderSuccessPage.styles'
 import { InfoWithIcon } from '@/assets/icons/InfoWithIcon'
 import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
 import BackButton from '@/components/BackButton'
@@ -42,7 +42,7 @@ export default function OrderConfirmedPage() {
               iconBg={'#DBAC2C'}
               text={
                 <RegularText>
-                  Previsão de entrega
+                  Previsão de entrega:
                   <br />
                   <strong>5 dias</strong>
                 </RegularText>
@@ -53,9 +53,9 @@ export default function OrderConfirmedPage() {
               iconBg={'#C47F17'}
               text={
                 <RegularText>
-                  Pagamento na entrega
+                  Tipo de pagamento:
                   <br />
-                  <strong>Cartao de Credito</strong>
+                  <strong>Lorem ipsum </strong>
                 </RegularText>
               }
             />

@@ -4,7 +4,6 @@ export const OrderConfirmedContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-
   margin-top: 5rem;
 
   h1 {
@@ -16,6 +15,14 @@ export const OrderConfirmedContainer = styled.div`
     align-items: center;
     justify-content: center; // adiciona os itens no centro ao longo do eixo horizontal
     gap: 2.5rem; // adiciona algum espaço entre os itens
+  }
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    margin-top: 2.5rem; // Reduz a margem superior
+    > section {
+      flex-direction: column; // Os itens da seção ficam em uma coluna
+    }
   }
 `
 export const CenteredTextContainer = styled.div`
@@ -31,7 +38,6 @@ export const OrderDetailsContainer = styled.div`
   position: relative;
   background: #fafafa;
   min-width: 32rem;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -43,6 +49,12 @@ export const OrderDetailsContainer = styled.div`
     z-index: -1;
     border-radius: 7px 37px 7px 37px;
     background: linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
+  }
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    padding: 1.25rem; // Reduz o preenchimento
+    min-width: auto; // Permite que o contêiner encolha
   }
 `
 

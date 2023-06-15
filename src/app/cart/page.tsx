@@ -1,31 +1,28 @@
-// components/Cart.tsx
 'use client'
-
-import { RootState } from '@/redux/store'
+import { RootState } from '@/redux/Store'
 import { useDispatch, useSelector } from 'react-redux'
-import { formatPrice } from '../../../utils/formatPrice'
-
 import {
   CartList,
   CartListContainer,
   CartResultContainer,
-  Container,
+  CartContainer,
   Divider,
-  PageLayoutContainer,
+  CartPageContainer,
   ShopBtn,
   TotalItem,
-} from '../../../styles/cartPageStyled'
+} from '../../../styles/CartPage.styles'
 import BackButton from '@/components/BackButton'
 import CartItem from '@/components/CartItem'
 import React from 'react'
 import { useRouter } from 'next/navigation'
 import { clearCart } from '@/redux/features/ShoppingCartSlice'
+import { formatPrice } from '../../../utils/FormatPrice'
 
 export default function ShoppingCart() {
   const router = useRouter()
   const dispatch = useDispatch()
   const { cartQuantity, items } = useSelector(
-    (state: RootState) => state.counter,
+    (state: RootState) => state.shoppingCart,
   )
   const products = useSelector((state: RootState) => state.products.value)
 
@@ -53,8 +50,8 @@ export default function ShoppingCart() {
   }
 
   return (
-    <PageLayoutContainer>
-      <Container>
+    <CartPageContainer>
+      <CartContainer>
         <CartListContainer>
           <BackButton />
           <h3>Seu carrinho</h3>
@@ -101,7 +98,7 @@ export default function ShoppingCart() {
             <ShopBtn onClick={handleCheckout}>FINALIZAR COMPRA</ShopBtn>
           )}
         </CartResultContainer>
-      </Container>
-    </PageLayoutContainer>
+      </CartContainer>
+    </CartPageContainer>
   )
 }

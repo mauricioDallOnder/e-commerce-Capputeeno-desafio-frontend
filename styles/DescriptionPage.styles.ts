@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const PageLayoutContainer = styled.div`
+export const ProductBoxContainer = styled.div`
   padding: 12px 24px;
   background-color: var(--bg-primary);
   margin: 0 auto;
@@ -15,7 +15,7 @@ export const PageLayoutContainer = styled.div`
   }
 `
 
-export const Container = styled.div`
+export const BoxDescription = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;

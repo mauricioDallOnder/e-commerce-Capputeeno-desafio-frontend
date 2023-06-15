@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import {
   InfoWithIconContainer,
   IconContainer,
-} from '../../../styles/pageOrderConfirmedStyle'
+} from '../../../styles/OrderSuccessPage.styles'
 
 interface BenefitItemProps {
   icon: ReactNode

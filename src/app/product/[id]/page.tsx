@@ -2,20 +2,20 @@
 'use client'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { addProducts } from '@/redux/features/productSlice'
+import { addProducts } from '@/redux/features/ProductSlice'
 import { useAppDispatch } from '../../../../hooks/Reduxhooks'
 import { useProducts } from '../../../../hooks/useProductsHook'
 import { addToCart } from '@/redux/features/ShoppingCartSlice'
 import {
-  Container,
-  PageLayoutContainer,
+  BoxDescription,
+  ProductBoxContainer,
   ProductInfo,
-} from '../../../../styles/productPageDescriptionStyle'
-import { formatPrice } from '../../../../utils/formatPrice'
+} from '../../../../styles/DescriptionPage.styles'
 import CartIconWhite from '@/assets/icons/CartIconWhite'
 import BackButton from '@/components/BackButton'
+import { formatPrice } from '../../../../utils/FormatPrice'
 
-export default function NotePage() {
+export default function ProductPage() {
   const pathname = usePathname()
 
   // Obtem a id do produto a partir da URL, divide a url em 2 e paga ultima parte que é a ID
@@ -42,8 +42,8 @@ export default function NotePage() {
   }
 
   return (
-    <PageLayoutContainer>
-      <Container>
+    <ProductBoxContainer>
+      <BoxDescription>
         <BackButton />
         <section>
           <img src={product.image_url} />
@@ -67,7 +67,7 @@ export default function NotePage() {
             </button>
           </div>
         </section>
-      </Container>
-    </PageLayoutContainer>
+      </BoxDescription>
+    </ProductBoxContainer>
   )
 }

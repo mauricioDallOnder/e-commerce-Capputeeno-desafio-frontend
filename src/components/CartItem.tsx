@@ -6,14 +6,15 @@ import {
   removeFromCart,
 } from '@/redux/features/ShoppingCartSlice'
 import { useDispatch } from 'react-redux'
+
+import { Trash } from 'phosphor-react'
+import { formatPrice } from '../../utils/FormatPrice'
+import React from 'react'
 import {
   CardContainer,
-  Item,
+  CartItemContainer,
   SelectQuantity,
-} from '../../styles/Cart-itemStyle'
-import { Trash } from 'phosphor-react'
-import { formatPrice } from '../../utils/formatPrice'
-import React from 'react'
+} from '../../styles/CartItem.styles'
 
 interface ProducsProps {
   productId: string
@@ -42,7 +43,7 @@ export default function CartItem({
     dispatch(setCartTotalQuantity())
   }
   return (
-    <Item>
+    <CartItemContainer>
       <React.Fragment>
         {' '}
         <button
@@ -72,6 +73,6 @@ export default function CartItem({
           </div>
         </CardContainer>
       </React.Fragment>
-    </Item>
+    </CartItemContainer>
   )
 }

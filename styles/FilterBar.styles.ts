@@ -9,7 +9,12 @@ export const ProductFilterBar = styled.div`
   display: flex;
   width: 90%;
   align-items: center;
-  justify-content: space-between; // Adiciona essa linha
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    flex-direction: column;
+  }
 `
 
 export const ButtonContainer = styled.div`
@@ -35,6 +40,16 @@ export const StyledButton = styled.button<ButtonProps>`
 
   &:hover {
     color: #41414d;
+  }
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    // Tela de celular
+    font-size: 12px;
   }
 `
 

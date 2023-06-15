@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Item = styled.li`
+export const CartItemContainer = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,14 +8,12 @@ export const Item = styled.li`
   max-width: 736px;
   border-radius: 8px;
   background-color: white;
-
   position: relative;
 
   button {
     position: absolute;
     top: 16px;
     right: 24px;
-
     border: none;
     background: transparent;
     cursor: pointer;
@@ -26,7 +24,19 @@ export const Item = styled.li`
     width: 256px;
     border-radius: 8px 0 0 8px;
   }
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    flex-direction: column; // Ajusta o layout para uma coluna
+    height: auto; // Permite que o contêiner cresça conforme necessário
+
+    img {
+      width: 100%; // A imagem ocupa toda a largura
+      border-radius: 8px 8px 0 0; // Ajusta os cantos arredondados
+    }
+  }
 `
+
 export const CardContainer = styled.div`
   display: flex;
   width: 100%;
@@ -37,6 +47,7 @@ export const CardContainer = styled.div`
   padding: 16px 24px;
   line-height: 150%;
   color: var(--text-dark-2);
+
   h4 {
     font-weight: 300;
     font-size: 20px;
@@ -60,6 +71,18 @@ export const CardContainer = styled.div`
       font-weight: 600;
       font-size: 16px;
       color: var(--shapes-dark);
+    }
+  }
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    height: auto; // Permite que o contêiner cresça conforme necessário
+    padding: 12px; // Reduz o preenchimento
+
+    h4,
+    p,
+    div {
+      font-size: 16px; // Reduz o tamanho da fonte
     }
   }
 `

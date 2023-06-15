@@ -10,6 +10,21 @@ export const ProductCardContainer = styled.div`
   grid-gap: 32px; /* Espaço entre os itens */
   width: 100%;
   margin-top: 32px;
+  justify-content: center; // Adiciona essa linha
+  align-items: start; // Adiciona essa linha
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); // Ajusta o número de colunas
+  }
+
+  @media (max-width: 480px) {
+    // Tela de celular
+    grid-template-columns: 1fr; // Ajusta o número de colunas para 1
+  }
 `
 
 export const PaginationButton = styled.button<ButtonProps>`
@@ -37,5 +52,25 @@ export const PaginationButton = styled.button<ButtonProps>`
     text-align: center;
     text-transform: uppercase;
     color: ${(props) => (props.selected ? '#FFA585' : '#737380')};
+  }
+
+  @media (max-width: 768px) {
+    // Tela de tablet
+    width: 28px;
+    height: 28px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    // Tela de celular
+    width: 24px;
+    height: 24px;
+
+    p {
+      font-size: 12px;
+    }
   }
 `

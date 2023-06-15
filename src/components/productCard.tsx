@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Card } from '../../styles/productCardStyle'
+import { StyledProductCard } from '../../styles/ProductCard.styles'
 import { Product } from '../../hooks/useProductsHook'
-import { formatPrice } from '../../utils/formatPrice'
+import { formatPrice } from '../../utils/FormatPrice'
 
 export interface ProductCardProps extends Product {
   id: string
@@ -19,11 +19,11 @@ export function ProductCard({
   price_in_cents,
 }: ProductCardProps) {
   return (
-    <Card>
+    <StyledProductCard>
       <img src={image_url} alt={name} />
       <h3>{name}</h3>
       <div></div>
       <p>{formatPrice(price_in_cents)}</p>
-    </Card>
+    </StyledProductCard>
   )
 }

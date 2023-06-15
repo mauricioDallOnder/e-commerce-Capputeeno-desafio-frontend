@@ -3,7 +3,7 @@ import {
   FilterContainer,
   PriorityFilter,
   PriorityFilterItem,
-} from '../../styles/dropDownStyle'
+} from '../../styles/Dropdown.styles'
 import { useEffect, useRef, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/Reduxhooks'
 import {
@@ -12,7 +12,7 @@ import {
   sortProducts,
   selectSortMethod,
   SortMethod,
-} from '@/redux/features/productSlice'
+} from '@/redux/features/ProductSlice'
 import { useProducts } from '../../hooks/useProductsHook'
 
 export function DropDownMenu() {

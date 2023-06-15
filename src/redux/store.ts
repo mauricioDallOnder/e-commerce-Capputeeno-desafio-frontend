@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './features/ShoppingCartSlice'
-import productSlice from './features/productSlice'
+import shoppingCartReducer from './features/ShoppingCartSlice'
+import productSlice from './features/ProductSlice'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer, // retorna um reducer
+    shoppingCart: shoppingCartReducer, // retorna um reducer
     products: productSlice, // usar products, que é um hook e não um reducer.
   },
   devTools: process.env.NODE_ENV !== 'production',

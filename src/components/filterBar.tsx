@@ -4,9 +4,9 @@ import {
   ButtonContainer,
   StyledButton,
   ProductFilterBar,
-} from '../../styles/filterBarStyle'
+} from '../../styles/FilterBar.styles'
 import { useAppDispatch } from '../../hooks/Reduxhooks'
-import { setFilterCategory } from '@/redux/features/productSlice'
+import { setFilterCategory } from '@/redux/features/ProductSlice'
 import { DropDownMenu } from './dropdownFilter'
 
 export function FilterBar() {

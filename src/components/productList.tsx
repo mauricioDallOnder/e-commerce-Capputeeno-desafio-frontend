@@ -6,45 +6,50 @@ import {
   selectFilter,
   selectProducts,
   selectFilterCategory,
-} from '@/redux/features/productSlice'
-import { ProductCard } from './productCard'
+} from '@/redux/features/ProductSlice'
 import { Pagination } from './Pagination'
 import Link from 'next/link'
+import { ProductCard } from './ProductCard'
 
 export function ProductList() {
   const products = useAppSelector(selectProducts)
   const filter = useAppSelector(selectFilter)
   const filterCategory = useAppSelector(selectFilterCategory)
 
-  const productsList = useProducts()
+  const fetchedProducts = useProducts()
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(addProducts(productsList))
-  }, [dispatch, productsList])
+    dispatch(addProducts(fetchedProducts))
+  }, [dispatch, fetchedProducts])
 
-  let filteredProducts = products
+  let productsAfterFilters = products
 
   if (filterCategory !== 'all') {
-    filteredProducts = filteredProducts.filter(
+    productsAfterFilters = productsAfterFilters.filter(
       (product) => product.category === filterCategory,
     )
   }
 
   if (filter) {
     const lowerCaseFilter = filter.toLowerCase()
-    filteredProducts = filteredProducts.filter((product) =>
+    productsAfterFilters = productsAfterFilters.filter((product) =>
       product.name.toLowerCase().includes(lowerCaseFilter),
     )
   }
 
-  const itemsPerPage = 12
+  const productsPerPage = 12
 
   return (
     <Pagination
-      products={filteredProducts}
-      itemsPerPage={itemsPerPage}
+      products={productsAfterFilters}
+      itemsPerPage={productsPerPage}
       renderProduct={(product) => (
-        <Link href={`/product/${product.id}`} key={product.id} prefetch={false}>
+        <Link
+          href={`/product/${product.id}`}
+          key={product.id}
+          prefetch={false}
+          style={{ textDecoration: 'none' }}
+        >
           <ProductCard
             key={product.id}
             id={product.id}

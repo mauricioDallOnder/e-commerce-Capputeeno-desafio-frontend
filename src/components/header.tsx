@@ -1,18 +1,18 @@
 /* eslint-disable camelcase */
 'use client'
 import {
-  InputContainer,
-  TagHeader,
-  TagLogo,
-  TagSearchBar,
-} from '../../styles/headerStyle'
+  SearchInputContainer,
+  StyledHeaderContainer,
+  StyledLogoContainer,
+  StyledSearchInput,
+} from '../../styles/Header.styles'
 import { Saira_Stencil_One } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import CartControl from './CartCount'
 import { useAppDispatch } from '../../hooks/Reduxhooks'
 import { ChangeEvent, useState } from 'react'
-import { setFilter } from '@/redux/features/productSlice'
+import { setFilter } from '@/redux/features/ProductSlice'
 
 const sairaStencil = Saira_Stencil_One({
   weight: '400',
@@ -26,11 +26,13 @@ export default function HeaderComponent() {
     dispatch(setFilter(e.target.value))
   }
   return (
-    <TagHeader>
-      <TagLogo className={sairaStencil.className}>Capputeeno</TagLogo>
+    <StyledHeaderContainer>
+      <StyledLogoContainer className={sairaStencil.className}>
+        Capputeeno
+      </StyledLogoContainer>
       <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
-        <InputContainer>
-          <TagSearchBar
+        <SearchInputContainer>
+          <StyledSearchInput
             placeholder="Procurando por algo específico?"
             value={inputValue}
             onChange={handleChange}
@@ -39,9 +41,9 @@ export default function HeaderComponent() {
             icon={faMagnifyingGlass}
             style={{ color: '#737380' }}
           />
-        </InputContainer>
+        </SearchInputContainer>
         <CartControl />
       </div>
-    </TagHeader>
+    </StyledHeaderContainer>
   )
 }

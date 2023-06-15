@@ -11,8 +11,8 @@ const initialState = {
   items: {},
 } as ShoppingCartProps
 
-export const counter = createSlice({
-  name: 'counter',
+export const shoppingCart = createSlice({
+  name: 'cart',
   initialState,
   reducers: {
     removeFromCart: (state, action: PayloadAction<string>) => {
@@ -53,5 +53,5 @@ export const {
   setCartTotalQuantity,
   addToCart,
   clearCart,
-} = counter.actions
-export default counter.reducer
+} = shoppingCart.actions
+export default shoppingCart.reducer

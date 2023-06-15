@@ -1,10 +1,10 @@
 import { CartIcon } from '../assets/icons/cartIcon'
 import { useAppSelector } from '../../hooks/Reduxhooks'
-import { CartStyle, Elipse } from '../../styles/cartIconStyle'
+import { CartStyle, Elipse } from '../../styles/CartIcon.styles'
 import Link from 'next/link'
 
 export default function CartTotalAmount() {
-  const count = useAppSelector((state) => state.counter.cartQuantity)
+  const count = useAppSelector((state) => state.shoppingCart.cartQuantity)
 
   return (
     <CartStyle>

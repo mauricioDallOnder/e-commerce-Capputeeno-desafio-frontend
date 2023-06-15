@@ -3,7 +3,7 @@ import { Product } from '../../hooks/useProductsHook'
 import {
   PaginationButton,
   ProductCardContainer,
-} from '../../styles/productListStyle'
+} from '../../styles/listOfProductsStyle'
 
 interface PaginationProps {
   products: Product[]

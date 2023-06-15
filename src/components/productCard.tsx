@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Card } from '../../styles/productCartStyle'
+import { Card } from '../../styles/productCardStyle'
 import { Product } from '../../hooks/useProductsHook'
 import { formatPrice } from '../../utils/formatPrice'
 

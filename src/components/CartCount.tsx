@@ -1,6 +1,6 @@
-import { CartIcon } from '../../assets/icons/cartIcon'
-import { useAppSelector } from '../../../hooks/Reduxhooks'
-import { CartStyle, Elipse } from '../../../styles/cartStyle'
+import { CartIcon } from '../assets/icons/cartIcon'
+import { useAppSelector } from '../../hooks/Reduxhooks'
+import { CartStyle, Elipse } from '../../styles/cartIconStyle'
 import Link from 'next/link'
 
 export default function CartTotalAmount() {

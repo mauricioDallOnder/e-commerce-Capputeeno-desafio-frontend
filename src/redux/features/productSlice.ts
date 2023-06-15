@@ -59,7 +59,7 @@ export const productSlice = createSlice({
           break
         case '':
         default:
-          return // Para o caso default, não fazemos nada.
+          return // Em  caso de default, não retornar nada.
       }
 
       state.value.sort(compareFunction)

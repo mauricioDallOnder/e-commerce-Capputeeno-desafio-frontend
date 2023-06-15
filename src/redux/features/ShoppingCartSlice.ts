@@ -41,6 +41,9 @@ export const counter = createSlice({
       }
       state.cartQuantity += 1
     },
+    clearCart: () => {
+      return initialState
+    },
   },
 })
 
@@ -49,5 +52,6 @@ export const {
   setCartItemQuantity,
   setCartTotalQuantity,
   addToCart,
+  clearCart,
 } = counter.actions
 export default counter.reducer

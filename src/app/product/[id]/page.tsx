@@ -1,14 +1,23 @@
+/* eslint-disable jsx-a11y/alt-text */
 'use client'
 import { useEffect } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { addProducts } from '@/redux/features/productSlice'
 import { useAppDispatch } from '../../../../hooks/Reduxhooks'
 import { useProducts } from '../../../../hooks/useProductsHook'
 import { addToCart } from '@/redux/features/ShoppingCartSlice'
+import {
+  Container,
+  PageLayoutContainer,
+  ProductInfo,
+} from '../../../../styles/productPageDescriptionStyle'
+import { formatPrice } from '../../../../utils/formatPrice'
+import CartIconWhite from '@/assets/icons/CartIconWhite'
+import BackButton from '@/components/BackButton'
 
 export default function NotePage() {
   const pathname = usePathname()
-  const router = useRouter()
+
   // Obtem a id do produto a partir da URL, divide a url em 2 e paga ultima parte que é a ID
   const id = pathname.split('/').pop()
 
@@ -33,18 +42,32 @@ export default function NotePage() {
   }
 
   return (
-    <div>
-      <button type="button" onClick={() => router.push(`/`)}>
-        voltar
-      </button>
-      <div>
-        <h3>{product.name}</h3>
-        <h5>{product.description}</h5>
-        <img src={product.image_url} alt={product.name} />
-      </div>
-      <button type="button" onClick={handleAddToCart}>
-        Adicionar ao carrinho
-      </button>
-    </div>
+    <PageLayoutContainer>
+      <Container>
+        <BackButton />
+        <section>
+          <img src={product.image_url} />
+          <div>
+            <ProductInfo>
+              <span>{product.category}</span>
+              <h2>{product.name}</h2>
+              <span>{formatPrice(product.price_in_cents ?? 0)}</span>
+              <p>
+                *Frete de R$40,00 para todo o Brasil. Grátis para compras acima
+                de R$900,00.
+              </p>
+              <div>
+                <h3>Descrição</h3>
+                <p>{product.description}</p>
+              </div>
+            </ProductInfo>
+            <button onClick={handleAddToCart}>
+              <CartIconWhite />
+              Adicionar ao carrinho
+            </button>
+          </div>
+        </section>
+      </Container>
+    </PageLayoutContainer>
   )
 }

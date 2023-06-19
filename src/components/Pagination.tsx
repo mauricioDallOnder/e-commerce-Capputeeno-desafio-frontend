@@ -4,6 +4,7 @@ import {
   PaginationButton,
   ProductCardContainer,
 } from '../../styles/ProductList.styles'
+import { CaretLeft, CaretRight } from 'phosphor-react'
 
 interface PaginationProps {
   products: Product[]
@@ -63,10 +64,10 @@ export const Pagination: React.FC<PaginationProps> = ({
           </PaginationButton>
         ))}
         <PaginationButton onClick={handlePreviousClick}>
-          <p>&lt;</p> {/* Seta para a esquerda */}
+        <CaretLeft size={16} fontWeight={800} />
         </PaginationButton>
         <PaginationButton onClick={handleNextClick}>
-          <p>&gt;</p> {/* Seta para a direita */}
+        <CaretRight size={16} fontWeight={800} />
         </PaginationButton>
       </div>
       <ProductCardContainer>

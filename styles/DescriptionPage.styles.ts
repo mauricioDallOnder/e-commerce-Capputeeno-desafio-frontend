@@ -10,19 +10,36 @@ export const ProductBoxContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 
-  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
-    padding: 34px 160px;
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+  }
+  @media (max-width: 480px) {
+    padding: 12px 8px;
   }
 `
+export const ProductArticle = styled.article`
+  display: flex;
+  gap: 32px;
+  justify-content:center;
+  max-width:480px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+`;
 
 export const BoxDescription = styled.div`
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  margin-left: 160px;
-  margin-right: 160px;
   margin-top: 71px;
+  width: 100%;
+  align-items: center;
+`;
+
+export const ProductFigure = styled.div`
   section {
     display: flex;
     justify-content: center;
@@ -32,41 +49,42 @@ export const BoxDescription = styled.div`
 
     img {
       max-width: 640px;
-      width: 50%;
+      width: 100%;
     }
-
-    > div {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-
-      button {
-        background: #115d8c;
-        mix-blend-mode: multiply;
-        border-radius: 4px;
-        color: white;
-        border: none;
-        cursor: pointer;
-        padding: 10px 0;
-        text-align: center;
-        font-weight: 500;
-        font-size: 16px;
-        text-transform: uppercase;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
+  
+    @media (max-width: 768px) {
+     
+      gap: 20px;
+    }
+    @media (max-width: 480px) {
+      gap: 16px;
     }
   }
 `
+
 export const ProductInfo = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  
+  @media (max-width: 768px) {
+    padding: 0 16px;
+    
+  }
+  @media (max-width: 480px) {
+    padding: 0 8px;
+   max-width:80%;
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+  }
+`
 
+export const HeaderSection = styled.header`
   span {
     font-weight: 400;
     font-size: 16px;
@@ -82,31 +100,76 @@ export const ProductInfo = styled.div`
     margin-top: 12px;
   }
 
-  span:nth-of-type(2) {
+  p {
     font-weight: 600;
     font-size: 20px;
+    line-height: 150%;
     color: var(--shapes-dark);
-    margin-bottom: 24px;
+    margin-top:4px;
   }
+`
 
-  p {
+export const DescriptionSection = styled.section`
+  span{
     font-weight: 400;
     font-size: 12px;
-    color: (--text-dark);
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color:var(--text-dark);
+    margin-bottom:58px;
+    margin-top:24px;
   }
+  h3{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--shapes-dark);
+  }
+  p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    text-align:left;
+    color: #41414D;
+  }
+`
 
-  div {
-    margin-top: 24px;
-
-    h3 {
-      text-transform: uppercase;
-      color: var(--text-dark);
+export const ProductFooter = styled.footer`
+  button {
+    width: 448px;
+    height: 44px;
+    background: #115D8C;
+    mix-blend-mode: multiply;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top:200px;
+    >span{
       font-weight: 500;
       font-size: 16px;
+      line-height: 150%;
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      color: #F5F5FA
     }
-
-    p {
-      font-size: 14px;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-top:100px;
+    }
+    @media (max-width: 480px) {
+      width: 100%;
+      height: 40px;
+      margin-top:80px;
+      >span{
+       padding-left:10px;
+       padding-right:10px;
+      }
     }
   }
 `

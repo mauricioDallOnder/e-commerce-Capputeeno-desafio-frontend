@@ -45,7 +45,7 @@ export function ProductList() {
       itemsPerPage={productsPerPage}
       renderProduct={(product) => (
         <Link
-          href={`/product/${product.id}`}
+          href={`/ProductDescriptionPage/${product.id}`}
           key={product.id}
           prefetch={false}
           style={{ textDecoration: 'none' }}

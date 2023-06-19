@@ -10,8 +10,15 @@ import {
 import { InfoWithIcon } from '@/assets/icons/InfoWithIcon'
 import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
 import BackButton from '@/components/BackButton'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { clearCart } from '@/redux/features/ShoppingCartSlice'
 
 export default function OrderConfirmedPage() {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(clearCart())
+  },[])
   return (
     <>
       <BackButton />

@@ -1,6 +1,7 @@
-'use client'
+"use client"
+import React, { useState } from 'react';
 import { RootState } from '@/redux/Store'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {
   CartList,
   CartListContainer,
@@ -13,14 +14,13 @@ import {
 } from '../../../styles/CartPage.styles'
 import BackButton from '@/components/BackButton'
 import CartItem from '@/components/CartItem'
-import React from 'react'
 import { useRouter } from 'next/navigation'
-import { clearCart } from '@/redux/features/ShoppingCartSlice'
 import { formatPrice } from '../../../utils/FormatPrice'
+import ProgressBar from '@ramonak/react-progress-bar';
 
 export default function ShoppingCart() {
   const router = useRouter()
-  const dispatch = useDispatch()
+
   const { cartQuantity, items } = useSelector(
     (state: RootState) => state.shoppingCart,
   )
@@ -44,9 +44,22 @@ export default function ShoppingCart() {
   // Calcular o total incluindo o frete, caso existam itens no carrinho
   const totalPriceWithFreight = cartNotEmpty ? totalprice + frete : totalprice
 
-  const handleCheckout = () => {
-    dispatch(clearCart())
-    router.push('/finished-order')
+  // Criar o estado de progresso
+  const [progress, setProgress] = useState(0);
+  const [buttonText, setButtonText] = useState('FINALIZAR COMPRA');
+
+  async function handleCheckout() {
+    setProgress(0);
+    setButtonText('PROCESSANDO PEDIDO...');
+    let intervalId = setInterval(() => {
+      setProgress(prevProgress => prevProgress + 15);
+    }, 1000);
+    setTimeout(() => clearInterval(intervalId), 9000);
+
+    await new Promise(resolve => setTimeout(resolve, 9000));
+
+    router.push('/OrderSuccessPage')
+    setButtonText('FINALIZAR COMPRA');
   }
 
   return (
@@ -92,10 +105,11 @@ export default function ShoppingCart() {
             <p>Total</p>
             <p>{formatPrice(totalPriceWithFreight)}</p>
           </TotalItem>
+          {progress > 0 && progress <= 100 && <ProgressBar completed={progress} />}
           {totalPriceWithFreight === 0 ? (
             <ShopBtn disabled={true}>FINALIZAR COMPRA</ShopBtn>
           ) : (
-            <ShopBtn onClick={handleCheckout}>FINALIZAR COMPRA</ShopBtn>
+            <ShopBtn onClick={handleCheckout}>{buttonText}</ShopBtn>
           )}
         </CartResultContainer>
       </CartContainer>

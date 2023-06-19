@@ -8,7 +8,12 @@ import { useProducts } from '../../../../hooks/useProductsHook'
 import { addToCart } from '@/redux/features/ShoppingCartSlice'
 import {
   BoxDescription,
+  DescriptionSection,
+  HeaderSection,
+  ProductArticle,
   ProductBoxContainer,
+  ProductFigure,
+  ProductFooter,
   ProductInfo,
 } from '../../../../styles/DescriptionPage.styles'
 import CartIconWhite from '@/assets/icons/CartIconWhite'
@@ -42,32 +47,42 @@ export default function ProductPage() {
   }
 
   return (
+    <>
+     
     <ProductBoxContainer>
+    <BackButton />
       <BoxDescription>
-        <BackButton />
-        <section>
-          <img src={product.image_url} />
-          <div>
-            <ProductInfo>
-              <span>{product.category}</span>
-              <h2>{product.name}</h2>
-              <span>{formatPrice(product.price_in_cents ?? 0)}</span>
-              <p>
-                *Frete de R$40,00 para todo o Brasil. Grátis para compras acima
-                de R$900,00.
-              </p>
-              <div>
+       
+        <main>
+          <ProductArticle>
+              <ProductFigure>
+                <img src={product.image_url} alt={product.name} />
+                <figcaption>{product.name}</figcaption>
+              </ProductFigure>
+              <ProductInfo>
+              <HeaderSection>
+                  <span>{product.category}</span>
+                  <h2>{product.name}</h2>
+                  <p>{formatPrice(product.price_in_cents ?? 0)}</p>
+              </HeaderSection>
+              <DescriptionSection>
+                <span>*Frete de R$40,00 para todo o Brasil. Grátis para compras acima de R$900,00.</span>
                 <h3>Descrição</h3>
                 <p>{product.description}</p>
-              </div>
-            </ProductInfo>
-            <button onClick={handleAddToCart}>
-              <CartIconWhite />
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </section>
+              </DescriptionSection>
+              <ProductFooter>
+                <button onClick={handleAddToCart}>
+                  <span>
+                  <CartIconWhite />
+                    Adicionar ao carrinho</span> 
+                </button>
+              </ProductFooter>
+              </ProductInfo>
+          </ProductArticle>
+        </main>
       </BoxDescription>
     </ProductBoxContainer>
+    </>
   )
+
 }

@@ -19,11 +19,13 @@ export const ProductCardContainer = styled.div`
       auto-fill,
       minmax(200px, 1fr)
     ); // Ajusta o número de colunas
+   
   }
 
   @media (max-width: 480px) {
     // Tela de celular
     grid-template-columns: 1fr; // Ajusta o número de colunas para 1
+   margin-left:80px;
   }
 `
 
@@ -43,12 +45,12 @@ export const PaginationButton = styled.button<ButtonProps>`
     width: 24px;
     height: 24px;
 
-    font-weight: 600;
+    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
 
     /* identical to box height, or 24px */
-
+    padding-left:4px;
     text-align: center;
     text-transform: uppercase;
     color: ${(props) => (props.selected ? '#FFA585' : '#737380')};
@@ -70,6 +72,8 @@ export const PaginationButton = styled.button<ButtonProps>`
     height: 24px;
 
     p {
+      padding-top:2px;
+      padding-right:4px;
       font-size: 12px;
     }
   }

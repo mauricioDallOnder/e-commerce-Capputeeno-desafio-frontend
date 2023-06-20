@@ -20,7 +20,7 @@ export function FilterBar() {
   }
 
   return (
-    <ProductFilterBar>
+    <ProductFilterBar data-category={selectedButton}>
       <div style={{ display: 'flex', gap: '40px' }}>
         {[
           { label: 'todos os produtos', category: 'all' },

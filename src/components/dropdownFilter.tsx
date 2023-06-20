@@ -46,7 +46,9 @@ export function DropDownMenu() {
 
   const handleSortMethodChange = (newMethod: SortMethod) => {
     dispatch(setSortMethod(newMethod))
-    dispatch(sortProducts(newMethod))
+    if (newMethod !== '') {
+      dispatch(sortProducts(newMethod))
+    }
     setIsOpen(false)
   }
 
@@ -68,38 +70,30 @@ export function DropDownMenu() {
   }
 
   return (
-    <FilterContainer ref={node}>
-      <button onClick={() => setIsOpen((prev) => !prev)}>
-        {getSortMethodLabel(sortMethod)}
-        <ArrowIcon />
-      </button>
-      {isOpen && (
-        <PriorityFilter>
-          <PriorityFilterItem onClick={() => handleSortMethodChange('')}>
-            Organizar por
-          </PriorityFilterItem>
-          <PriorityFilterItem
-            onClick={() => handleSortMethodChange('novidades')}
-          >
-            Novidades
-          </PriorityFilterItem>
-          <PriorityFilterItem
-            onClick={() => handleSortMethodChange('preco-maior')}
-          >
-            Preço: Maior - menor
-          </PriorityFilterItem>
-          <PriorityFilterItem
-            onClick={() => handleSortMethodChange('preco-menor')}
-          >
-            Preço: Menor - maior
-          </PriorityFilterItem>
-          <PriorityFilterItem
-            onClick={() => handleSortMethodChange('mais-vendidos')}
-          >
-            Mais vendidos
-          </PriorityFilterItem>
-        </PriorityFilter>
-      )}
-    </FilterContainer>
+    <FilterContainer ref={node} data-testid="filter-container">
+    <button onClick={() => setIsOpen((prev) => !prev)}>
+      {getSortMethodLabel(sortMethod)}
+      <ArrowIcon />
+    </button>
+    {isOpen && (
+      <PriorityFilter data-testid="priority-filter">
+        <PriorityFilterItem data-testid="sort-by-default" onClick={() => handleSortMethodChange('')}>
+          Organizar por
+        </PriorityFilterItem>
+        <PriorityFilterItem data-testid="sort-by-novidades" onClick={() => handleSortMethodChange('novidades')}>
+          Novidades
+        </PriorityFilterItem>
+        <PriorityFilterItem data-testid="sort-by-preco-maior" onClick={() => handleSortMethodChange('preco-maior')}>
+          Preço: Maior - menor
+        </PriorityFilterItem>
+        <PriorityFilterItem data-testid="sort-by-preco-menor" onClick={() => handleSortMethodChange('preco-menor')}>
+          Preço: Menor - maior
+        </PriorityFilterItem>
+        <PriorityFilterItem data-testid="sort-by-mais-vendidos" onClick={() => handleSortMethodChange('mais-vendidos')}>
+          Mais vendidos
+        </PriorityFilterItem>
+      </PriorityFilter>
+    )}
+  </FilterContainer>
   )
 }

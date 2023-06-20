@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 'use client'
-import { useEffect } from 'react'
+
 import { usePathname } from 'next/navigation'
 import { addProducts } from '@/redux/features/ProductSlice'
 import { useAppDispatch } from '../../../../hooks/Reduxhooks'
@@ -19,6 +19,8 @@ import {
 import CartIconWhite from '@/assets/icons/CartIconWhite'
 import BackButton from '@/components/BackButton'
 import { formatPrice } from '../../../../utils/FormatPrice'
+import { Helmet } from 'react-helmet'
+import { useEffect } from 'react'
 
 export default function ProductPage() {
   const pathname = usePathname()
@@ -48,11 +50,14 @@ export default function ProductPage() {
 
   return (
     <>
-     
+   
+      <Helmet>
+        <title>Descrição do produto - E-commerce--capputeeno</title>
+        <meta name="description" content="Página de descrição do produto selecionado. Agradecemos pela sua compra!"/>
+      </Helmet>
     <ProductBoxContainer>
     <BackButton />
       <BoxDescription>
-       
         <main>
           <ProductArticle>
               <ProductFigure>

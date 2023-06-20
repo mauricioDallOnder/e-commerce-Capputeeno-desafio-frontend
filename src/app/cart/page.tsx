@@ -17,6 +17,7 @@ import CartItem from '@/components/CartItem'
 import { useRouter } from 'next/navigation'
 import { formatPrice } from '../../../utils/FormatPrice'
 import ProgressBar from '@ramonak/react-progress-bar';
+import { Helmet } from 'react-helmet';
 
 export default function ShoppingCart() {
   const router = useRouter()
@@ -63,6 +64,12 @@ export default function ShoppingCart() {
   }
 
   return (
+    <>
+      <Helmet>
+        <title>Carrinho de produtos - E-commerce--capputeeno</title>
+        <meta name="description" content="Página do carrinho de produtos do E-commerce--capputeeno. Agradecemos pela sua compra!"/>
+      </Helmet>
+ 
     <CartPageContainer>
       <CartContainer>
         <CartListContainer>
@@ -114,5 +121,6 @@ export default function ShoppingCart() {
         </CartResultContainer>
       </CartContainer>
     </CartPageContainer>
+    </>
   )
 }

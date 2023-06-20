@@ -9,7 +9,7 @@ export type SortMethod =
   | 'mais-vendidos'
   | ''
 
-interface ProductState {
+export interface ProductState {
   value: Product[]
   filter: string
   filterCategory: string

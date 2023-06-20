@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Product } from '../../../hooks/useProductsHook'
 
-type ShoppingCartProps = {
+export type ShoppingCartProps = {
   cartQuantity: number
   items: { [productId: string]: number }
 }

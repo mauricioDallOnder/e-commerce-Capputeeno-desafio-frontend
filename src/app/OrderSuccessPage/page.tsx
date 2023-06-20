@@ -1,4 +1,7 @@
-'use client'
+"use client"
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { Helmet } from 'react-helmet'
 import { MapPin, Clock, CurrencyDollar } from 'phosphor-react'
 import {
   CenteredTextContainer,
@@ -10,17 +13,22 @@ import {
 import { InfoWithIcon } from '@/assets/icons/InfoWithIcon'
 import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
 import BackButton from '@/components/BackButton'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
 import { clearCart } from '@/redux/features/ShoppingCartSlice'
 
 export default function OrderConfirmedPage() {
   const dispatch = useDispatch()
-  useEffect(()=>{
+
+  useEffect(() => {
     dispatch(clearCart())
-  },[])
+  }, [])
+
   return (
     <>
+      <Helmet>
+        <title>Confirmação de Pedido - E-commerce--capputeeno</title>
+        <meta name="description" content="Página de confirmação de pedido da loja Capputeeno. Agradecemos pela sua compra!"/>
+      </Helmet>
+
       <BackButton />
 
       <OrderConfirmedContainer className="container">

@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 
 import { Trash } from 'phosphor-react'
 import { formatPrice } from '../../utils/FormatPrice'
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CardContainer,
   CartItemContainer,
@@ -42,17 +42,32 @@ export default function CartItem({
     dispatch(removeFromCart(productId))
     dispatch(setCartTotalQuantity())
   }
+  const [isHover, setIsHover] = useState(false)
+  const TrashStyle = {
+    color: isHover ? '#DE3838' : '',
+  }
+  const handleMouseEnter = () => {
+    setIsHover(true)
+  }
+  const handleMouseLeave = () => {
+    setIsHover(false)
+  }
   return (
-    <CartItemContainer>
+    <CartItemContainer role="listitem">
       <React.Fragment>
         {' '}
         <button
           onClick={() => handleRemoveFromCart(productId)}
           aria-label="Deletar"
         >
-          <Trash size={32} />
+          <Trash
+            size={32}
+            style={TrashStyle}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          />
         </button>
-        <img src={image_url} />
+        <img src={image_url} alt={name} />
         <CardContainer>
           <h4>{name}</h4>
           <p>{description}</p>

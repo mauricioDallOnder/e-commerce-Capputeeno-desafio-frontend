@@ -5,7 +5,7 @@ import { ReturnButton } from '../../styles/BackButton.styles'
 export default function BackButton() {
   const router = useRouter()
   return (
-    <ReturnButton onClick={() => router.push('/')}>
+    <ReturnButton onClick={() => router.push('/')} role="backbutton">
       <BackIcon />
       Voltar
     </ReturnButton>

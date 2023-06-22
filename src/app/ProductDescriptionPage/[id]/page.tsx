@@ -50,44 +50,49 @@ export default function ProductPage() {
 
   return (
     <>
-   
       <Helmet>
         <title>Descrição do produto - E-commerce--capputeeno</title>
-        <meta name="description" content="Página de descrição do produto selecionado. Agradecemos pela sua compra!"/>
+        <meta
+          name="description"
+          content="Página de descrição do produto selecionado. Agradecemos pela sua compra!"
+        />
       </Helmet>
-    <ProductBoxContainer>
-    <BackButton />
-      <BoxDescription>
-        <main>
-          <ProductArticle>
+      <ProductBoxContainer>
+        <BackButton />
+        <BoxDescription>
+          <main>
+            <ProductArticle>
               <ProductFigure>
                 <img src={product.image_url} alt={product.name} />
                 <figcaption>{product.name}</figcaption>
               </ProductFigure>
               <ProductInfo>
-              <HeaderSection>
+                <HeaderSection>
                   <span>{product.category}</span>
                   <h2>{product.name}</h2>
                   <p>{formatPrice(product.price_in_cents ?? 0)}</p>
-              </HeaderSection>
-              <DescriptionSection>
-                <span>*Frete de R$40,00 para todo o Brasil. Grátis para compras acima de R$900,00.</span>
-                <h3>Descrição</h3>
-                <p>{product.description}</p>
-              </DescriptionSection>
-              <ProductFooter>
-                <button onClick={handleAddToCart}>
+                </HeaderSection>
+                <DescriptionSection>
                   <span>
-                  <CartIconWhite />
-                    Adicionar ao carrinho</span> 
-                </button>
-              </ProductFooter>
+                    *Frete de R$40,00 para todo o Brasil. Grátis para compras
+                    acima de R$900,00.
+                  </span>
+                  <h3>Descrição</h3>
+                  <p>{product.description}</p>
+                </DescriptionSection>
+                <ProductFooter>
+                  <button onClick={handleAddToCart}>
+                    <span>
+                      <CartIconWhite />
+                      Adicionar ao carrinho
+                    </span>
+                  </button>
+                </ProductFooter>
               </ProductInfo>
-          </ProductArticle>
-        </main>
-      </BoxDescription>
-    </ProductBoxContainer>
+            </ProductArticle>
+          </main>
+        </BoxDescription>
+      </ProductBoxContainer>
     </>
   )
-
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledProductCard = styled.div`
+export const StyledProductCard = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,16 +11,30 @@ export const StyledProductCard = styled.div`
   border-radius: 0px 0px 4px 4px;
   width: 256px;
 
-  h3 {
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 150%;
-    display: flex;
-    align-items: center;
-    color: var(--text-dark-2);
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-top: 8px;
+  figure {
+    img {
+      width: 256px;
+      height: 300px;
+    }
+
+    figcaption {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: var(--text-dark-2);
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-top: 8px;
+    }
+  }
+
+  div {
+    width: 228px;
+    height: 1px;
+    margin: 8px 0px;
+    background: var(--shapes);
   }
 
   p {
@@ -33,15 +47,5 @@ export const StyledProductCard = styled.div`
     padding-left: 12px;
     padding-right: 12px;
     margin-bottom: 8px;
-  }
-  > div {
-    width: 228px;
-    height: 1px;
-    margin: 8px 0px;
-    background: var(--shapes);
-  }
-  img {
-    width: 256px;
-    height: 300px;
   }
 `

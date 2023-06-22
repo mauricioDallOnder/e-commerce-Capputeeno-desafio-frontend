@@ -18,6 +18,11 @@ export const StyledHeaderContainer = styled.header`
     height: auto;
   }
 `
+export const StyledNavContainer = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 28px;
+`
 
 export const StyledLogoContainer = styled.a`
   display: flex;

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Product } from '../../hooks/useProductsHook'
 import {
   PaginationButton,
+  PaginationList,
   ProductCardContainer,
 } from '../../styles/ProductList.styles'
 import { CaretLeft, CaretRight } from 'phosphor-react'
@@ -9,8 +10,7 @@ import { CaretLeft, CaretRight } from 'phosphor-react'
 interface PaginationProps {
   products: Product[]
   itemsPerPage: number
-  // eslint-disable-next-line no-undef
-  renderProduct: (product: Product) => JSX.Element
+  renderProduct: (product: Product) => React.JSX.Element
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
@@ -41,38 +41,47 @@ export const Pagination: React.FC<PaginationProps> = ({
   const currentProducts = products.slice(startIndex, endIndex)
 
   return (
-    <div>
-      <div
-        style={{
-          display: 'flex',
-          width: '90%',
-          alignItems: 'flex-end',
-          alignContent: 'flex-end',
-          justifyContent: 'flex-end',
-        }}
-      >
+    <nav>
+      <PaginationList>
         {Array.from(
           { length: Math.ceil(products.length / itemsPerPage) },
           (_, i) => i,
         ).map((number) => (
-          <PaginationButton
-            key={number}
-            selected={number === currentPage}
-            onClick={() => handlePageClick(number)}
-          >
-            <p>{number + 1}</p>
-          </PaginationButton>
+          <li key={number}>
+            <PaginationButton
+              selected={number === currentPage}
+              onClick={() => handlePageClick(number)}
+              aria-label={`Ir para a página ${number + 1}`}
+              data-cy={`page-button-${number + 1}`}
+            >
+              <p>{number + 1}</p>
+            </PaginationButton>
+          </li>
         ))}
-        <PaginationButton onClick={handlePreviousClick}>
-        <CaretLeft size={16} fontWeight={800} />
-        </PaginationButton>
-        <PaginationButton onClick={handleNextClick}>
-        <CaretRight size={16} fontWeight={800} />
-        </PaginationButton>
-      </div>
-      <ProductCardContainer>
-        {currentProducts.map(renderProduct)}
-      </ProductCardContainer>
-    </div>
+        <li>
+          <PaginationButton
+            onClick={handlePreviousClick}
+            aria-label="Página anterior"
+            data-cy="prev-button"
+          >
+            <CaretLeft size={16} fontWeight={800} />
+          </PaginationButton>
+        </li>
+        <li>
+          <PaginationButton
+            onClick={handleNextClick}
+            aria-label="Próxima página"
+            data-cy="next-button"
+          >
+            <CaretRight size={16} fontWeight={800} />
+          </PaginationButton>
+        </li>
+      </PaginationList>
+      <section>
+        <ProductCardContainer>
+          {currentProducts.map(renderProduct)}
+        </ProductCardContainer>
+      </section>
+    </nav>
   )
 }

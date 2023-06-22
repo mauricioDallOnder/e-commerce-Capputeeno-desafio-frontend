@@ -19,9 +19,13 @@ export function ProductCard({
   price_in_cents,
 }: ProductCardProps) {
   return (
-    <StyledProductCard>
-      <img src={image_url} alt={name} />
-      <h3>{name}</h3>
+    <StyledProductCard data-cy="product-card">
+      {' '}
+      {/* Aqui está a adição do atributo data-cy */}
+      <figure>
+        <img src={image_url} alt={name} />
+        <figcaption>{name}</figcaption>
+      </figure>
       <div></div>
       <p>{formatPrice(price_in_cents)}</p>
     </StyledProductCard>

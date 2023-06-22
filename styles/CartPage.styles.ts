@@ -35,6 +35,7 @@ export const CartListContainer = styled.div`
     text-transform: uppercase;
     color: var(--text-dark-2);
     margin-top: 24px;
+    margin-bottom: 6px;
   }
 
   p {
@@ -65,6 +66,9 @@ export const CartList = styled.ul`
   grid-template-columns: 1fr;
   gap: 16px;
   margin-top: 24px;
+  > li {
+    list-style: none;
+  }
 `
 
 export const CartResultContainer = styled.div`

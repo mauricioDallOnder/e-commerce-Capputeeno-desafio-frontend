@@ -3,12 +3,11 @@ import {
   ActiveBar,
   ButtonContainer,
   StyledButton,
-  ProductFilterBar,
+  StyledNavigation,
 } from '../../styles/FilterBar.styles'
 import { useAppDispatch } from '../../hooks/Reduxhooks'
 import { setFilterCategory } from '@/redux/features/ProductSlice'
 import { DropDownMenu } from './DropDownFilter'
-
 
 export function FilterBar() {
   const [selectedButton, setSelectedButton] = useState('todos os produtos')
@@ -20,7 +19,7 @@ export function FilterBar() {
   }
 
   return (
-    <ProductFilterBar data-category={selectedButton}>
+    <StyledNavigation data-category={selectedButton}>
       <div style={{ display: 'flex', gap: '40px' }}>
         {[
           { label: 'todos os produtos', category: 'all' },
@@ -31,6 +30,7 @@ export function FilterBar() {
             <StyledButton
               onClick={() => handleClick(button.category, button.label)}
               selected={selectedButton === button.label}
+              aria-label={`Filtrar por ${button.label}`}
             >
               {button.label}
             </StyledButton>
@@ -39,6 +39,6 @@ export function FilterBar() {
         ))}
       </div>
       <DropDownMenu />
-    </ProductFilterBar>
+    </StyledNavigation>
   )
 }

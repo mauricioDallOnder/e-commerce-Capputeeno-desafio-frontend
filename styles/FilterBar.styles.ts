@@ -4,7 +4,7 @@ type ButtonProps = {
   selected: boolean
 }
 
-export const ProductFilterBar = styled.div`
+export const StyledNavigation = styled.div`
   margin-top: 34px;
   display: flex;
   width: 90%;

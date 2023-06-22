@@ -51,6 +51,7 @@ export function ProductList() {
           style={{ textDecoration: 'none' }}
         >
           <ProductCard
+            data-cy="product-card"
             key={product.id}
             id={product.id}
             name={product.name}

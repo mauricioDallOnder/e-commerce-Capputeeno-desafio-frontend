@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Helmet } from 'react-helmet'
@@ -26,7 +26,10 @@ export default function OrderConfirmedPage() {
     <>
       <Helmet>
         <title>Confirmação de Pedido - E-commerce--capputeeno</title>
-        <meta name="description" content="Página de confirmação de pedido da loja Capputeeno. Agradecemos pela sua compra!"/>
+        <meta
+          name="description"
+          content="Página de confirmação de pedido da loja Capputeeno. Agradecemos pela sua compra!"
+        />
       </Helmet>
 
       <BackButton />

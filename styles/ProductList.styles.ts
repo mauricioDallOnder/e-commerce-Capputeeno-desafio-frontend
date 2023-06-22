@@ -10,6 +10,7 @@ export const ProductCardContainer = styled.div`
   grid-gap: 32px; /* Espaço entre os itens */
   width: 100%;
   margin-top: 32px;
+  margin-bottom: 174px;
   justify-content: center; // Adiciona essa linha
   align-items: start; // Adiciona essa linha
 
@@ -19,14 +20,21 @@ export const ProductCardContainer = styled.div`
       auto-fill,
       minmax(200px, 1fr)
     ); // Ajusta o número de colunas
-   
   }
 
   @media (max-width: 480px) {
     // Tela de celular
     grid-template-columns: 1fr; // Ajusta o número de colunas para 1
-   margin-left:80px;
+    margin-left: 80px;
   }
+`
+export const PaginationList = styled.ul`
+  display: flex;
+  width: 90%;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: flex-end;
+  list-style-type: none;
 `
 
 export const PaginationButton = styled.button<ButtonProps>`
@@ -50,7 +58,7 @@ export const PaginationButton = styled.button<ButtonProps>`
     line-height: 150%;
 
     /* identical to box height, or 24px */
-    padding-left:4px;
+    padding-left: 4px;
     text-align: center;
     text-transform: uppercase;
     color: ${(props) => (props.selected ? '#FFA585' : '#737380')};
@@ -72,8 +80,8 @@ export const PaginationButton = styled.button<ButtonProps>`
     height: 24px;
 
     p {
-      padding-top:2px;
-      padding-right:4px;
+      padding-top: 2px;
+      padding-right: 4px;
       font-size: 12px;
     }
   }

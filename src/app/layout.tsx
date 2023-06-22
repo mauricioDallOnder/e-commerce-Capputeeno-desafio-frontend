@@ -1,8 +1,7 @@
-
 import './globals.css'
 import { Saira } from 'next/font/google'
 import { ReactNode } from 'react'
-import  Providers  from '@/redux/services/Provider'
+import Providers from '@/redux/services/Provider'
 import HeaderComponent from '@/components/Header'
 
 const saira = Saira({

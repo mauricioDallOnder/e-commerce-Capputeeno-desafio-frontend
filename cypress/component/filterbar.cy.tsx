@@ -1,9 +1,8 @@
-
+/* eslint-disable no-undef */
 import { FilterBar } from '@/components/FilterBar'
 import { store } from '@/redux/Store'
 import { mount } from 'cypress/react18'
 import { Provider } from 'react-redux'
-
 
 describe('FilterBar Component', () => {
   beforeEach(() => {
@@ -16,7 +15,7 @@ describe('FilterBar Component', () => {
 
   it('Verifica a seleção de todos os produtos', () => {
     cy.get('button').contains('todos os produtos').click()
-      // Verifica se a categoria todos os produtos corretamente foi definida
+    // Verifica se a categoria todos os produtos corretamente foi definida
     cy.get('[data-category="todos os produtos"]').should('exist')
   })
 

@@ -11,7 +11,7 @@ export interface Product {
   created_at?: Date
   sales?: number
 }
-//hook to get data from graphql api
+// hook to get data from graphql api
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string
 
 export function useProducts() {

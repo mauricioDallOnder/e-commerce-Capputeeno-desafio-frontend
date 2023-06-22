@@ -4,6 +4,7 @@ import {
   SearchInputContainer,
   StyledHeaderContainer,
   StyledLogoContainer,
+  StyledNavContainer,
   StyledSearchInput,
 } from '../../styles/Header.styles'
 import { Saira_Stencil_One } from 'next/font/google'
@@ -26,24 +27,26 @@ export default function HeaderComponent() {
     dispatch(setFilter(e.target.value))
   }
   return (
-    <StyledHeaderContainer>
+    <StyledHeaderContainer role="banner">
       <StyledLogoContainer className={sairaStencil.className}>
         Capputeeno
       </StyledLogoContainer>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
-        <SearchInputContainer>
+      <StyledNavContainer>
+        <SearchInputContainer role="search">
           <StyledSearchInput
             placeholder="Procurando por algo específico?"
             value={inputValue}
             onChange={handleChange}
+            aria-label="Search"
           />
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             style={{ color: '#737380' }}
+            aria-hidden="true"
           />
         </SearchInputContainer>
         <CartControl />
-      </div>
+      </StyledNavContainer>
     </StyledHeaderContainer>
   )
 }

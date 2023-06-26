@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CaretLeft, CaretRight } from 'phosphor-react'
 import { Product } from '@/hooks/useProductsHook'
-import { PaginationList, PaginationButton, ProductCardContainer } from '@/styles/productList.styles'
+import { PaginationList, PaginationButton, ProductCardContainer } from '@/styles/ProductListStyles'
 
 interface PaginationProps {
   products: Product[]

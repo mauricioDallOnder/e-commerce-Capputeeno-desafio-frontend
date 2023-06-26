@@ -6,8 +6,9 @@ import { MapPin, Clock, CurrencyDollar } from 'phosphor-react'
 import { InfoWithIcon } from '@/assets/icons/InfoWithIcon'
 import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
 import BackButton from '@/components/backButton'
+
 import { clearCart } from '@/redux/features/shoppingCartSlice'
-import { OrderConfirmedContainer, CenteredTextContainer, TitleText, RegularText, OrderDetailsContainer } from '@/styles/orderSuccessPage.styles'
+import { OrderConfirmedContainer, CenteredTextContainer, TitleText, RegularText, OrderDetailsContainer } from '@/styles/OrderSuccessPageStyles'
 
 export default function OrderConfirmedPage() {
   const dispatch = useDispatch()

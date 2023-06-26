@@ -7,7 +7,7 @@ import CartItem from '@/components/cartItem'
 import { useRouter } from 'next/navigation'
 import ProgressBar from '@ramonak/react-progress-bar'
 import { Helmet } from 'react-helmet'
-import { CartPageContainer, CartContainer, CartListContainer, CartList, CartResultContainer, TotalItem, Divider, ShopBtn } from '@/styles/cartPage.styles'
+import { CartPageContainer, CartContainer, CartListContainer, CartList, CartResultContainer, TotalItem, Divider, ShopBtn } from '@/styles/CartPageStyles'
 import { formatPrice } from '@/utils/FormatPrice'
 
 export default function ShoppingCart() {

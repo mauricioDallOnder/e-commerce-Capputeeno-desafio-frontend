@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux'
 import { Trash } from 'phosphor-react'
 
 import React, { useState } from 'react'
-import { CartItemContainer, CardContainer, SelectQuantity } from '@/styles/cartItem.styles'
+import { CartItemContainer, CardContainer, SelectQuantity } from '@/styles/CartItemStyles'
 import { formatPrice } from '@/utils/FormatPrice'
 
 

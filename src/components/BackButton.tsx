@@ -1,5 +1,5 @@
 import BackIcon from '@/assets/icons/BackIcon'
-import { ReturnButton } from '@/styles/backButton.styles'
+import { ReturnButton } from '@/styles/BackButtonStyles'
 import { useRouter } from 'next/navigation'
 
 export default function BackButton() {

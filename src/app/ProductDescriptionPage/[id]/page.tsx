@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
 import { useAppDispatch } from '@/hooks/reduxhooks'
 import { useProducts } from '@/hooks/useProductsHook'
-import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '@/styles/descriptionPage.styles'
+import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '@/styles/DescriptionPageStyles'
 import { formatPrice } from '@/utils/FormatPrice'
 
 export default function ProductPage() {

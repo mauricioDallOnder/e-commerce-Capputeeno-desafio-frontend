@@ -9,7 +9,7 @@ import {
 } from '@/redux/features/productSlice'
 import { useAppSelector, useAppDispatch } from '@/hooks/reduxhooks'
 import { useProducts } from '@/hooks/useProductsHook'
-import { FilterContainer, PriorityFilter, PriorityFilterItem } from '@/styles/dropdown.styles'
+import { FilterContainer, PriorityFilter, PriorityFilterItem } from '@/styles/DropdownStyles'
 
 
 export function DropDownMenu() {

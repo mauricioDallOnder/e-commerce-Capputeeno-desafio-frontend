@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { addProducts } from '@/redux/features/productSlice'
 import { useAppDispatch } from './reduxhooks'
+
 export interface Product {
   id: string
   name: string
@@ -12,7 +13,7 @@ export interface Product {
   sales?: number
 }
 // hook to get data from graphql api
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string
+const API_URL = 'http://localhost:3333/'
 
 export function useProducts() {
   const dispatch = useAppDispatch()

@@ -6,8 +6,9 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import CartControl from './cartCount'
 import { ChangeEvent, useState } from 'react'
 import { setFilter } from '@/redux/features/productSlice'
-import { SearchInputContainer, StyledHeaderContainer, StyledLogoContainer, StyledNavContainer, StyledSearchInput } from '@/styles/header.styles'
+import { SearchInputContainer, StyledHeaderContainer, StyledLogoContainer, StyledNavContainer, StyledSearchInput } from '@/styles/HeaderStyles'
 import { useAppDispatch } from '@/hooks/reduxhooks'
+
 
 const sairaStencil = Saira_Stencil_One({
   weight: '400',

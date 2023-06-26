@@ -4,13 +4,13 @@ import {
   setCartItemQuantity,
   setCartTotalQuantity,
   removeFromCart,
-} from '@/redux/features/ShoppingCartSlice'
+} from '@/redux/features/shoppingCartSlice'
 import { useDispatch } from 'react-redux'
 
 import { Trash } from 'phosphor-react'
 
 import React, { useState } from 'react'
-import { CartItemContainer, CardContainer, SelectQuantity } from '@/styles/CartItem.styles'
+import { CartItemContainer, CardContainer, SelectQuantity } from '@/styles/cartItem.styles'
 import { formatPrice } from '@/utils/FormatPrice'
 
 

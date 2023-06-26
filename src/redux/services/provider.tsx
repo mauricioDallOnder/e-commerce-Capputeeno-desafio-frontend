@@ -2,7 +2,7 @@
 import React, { PureComponent, ReactNode } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import { store, persistor } from '../Store'
+import { store, persistor } from '../store'
 
 interface ProvidersProps {
   children: ReactNode

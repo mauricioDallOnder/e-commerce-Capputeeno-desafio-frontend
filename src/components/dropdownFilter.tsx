@@ -6,10 +6,10 @@ import {
   sortProducts,
   selectSortMethod,
   SortMethod,
-} from '@/redux/features/ProductSlice'
-import { useAppSelector, useAppDispatch } from '@/hooks/Reduxhooks'
+} from '@/redux/features/productSlice'
+import { useAppSelector, useAppDispatch } from '@/hooks/reduxhooks'
 import { useProducts } from '@/hooks/useProductsHook'
-import { FilterContainer, PriorityFilter, PriorityFilterItem } from '@/styles/Dropdown.styles'
+import { FilterContainer, PriorityFilter, PriorityFilterItem } from '@/styles/dropdown.styles'
 
 
 export function DropDownMenu() {

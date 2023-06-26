@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
-import { useAppSelector, useAppDispatch } from '../hooks/Reduxhooks'
+import { useAppSelector, useAppDispatch } from '../hooks/reduxhooks'
 
 import {
   addProducts,
   selectFilter,
   selectProducts,
   selectFilterCategory,
-} from '@/redux/features/ProductSlice'
-import { Pagination } from './Pagination'
+} from '@/redux/features/productSlice'
+import { Pagination } from './pagination'
 import Link from 'next/link'
-import { ProductCard } from './ProductCard'
+import { ProductCard } from './productCard'
 import { useProducts } from '@/hooks/useProductsHook'
 
 export function ProductList() {

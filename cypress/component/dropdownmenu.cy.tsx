@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-import { DropDownMenu } from '@/components/DropDownFilter'
-import { store } from '@/redux/Store'
+import { DropDownMenu } from '@/components/dropDownFilter'
+import { store } from '@/redux/store'
 import { mount } from 'cypress/react18'
 import { Provider } from 'react-redux'
 

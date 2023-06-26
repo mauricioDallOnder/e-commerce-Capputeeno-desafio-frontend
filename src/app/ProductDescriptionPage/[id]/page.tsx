@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/alt-text */
 'use client'
 import { usePathname } from 'next/navigation'
-import { addProducts } from '@/redux/features/ProductSlice'
-import { addToCart } from '@/redux/features/ShoppingCartSlice'
+import { addProducts } from '@/redux/features/productSlice'
+import { addToCart } from '@/redux/features/shoppingCartSlice'
 import CartIconWhite from '@/assets/icons/CartIconWhite'
-import BackButton from '@/components/BackButton'
+import BackButton from '@/components/backButton'
 import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
-import { useAppDispatch } from '@/hooks/Reduxhooks'
+import { useAppDispatch } from '@/hooks/reduxhooks'
 import { useProducts } from '@/hooks/useProductsHook'
-import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '@/styles/DescriptionPage.styles'
+import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '@/styles/descriptionPage.styles'
 import { formatPrice } from '@/utils/FormatPrice'
 
 export default function ProductPage() {

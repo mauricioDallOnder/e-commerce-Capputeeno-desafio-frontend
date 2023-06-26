@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../Store'
-import { Product } from '../../../hooks/useProductsHook'
+import { Product } from '@/hooks/useProductsHook'
+
 
 export type SortMethod =
   | 'novidades'

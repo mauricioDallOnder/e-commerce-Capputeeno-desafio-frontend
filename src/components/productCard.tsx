@@ -1,8 +1,9 @@
 /* eslint-disable camelcase */
+import { Product } from '@/hooks/useProductsHook'
+import { StyledProductCard } from '@/styles/ProductCard.styles'
+import { formatPrice } from '@/utils/FormatPrice'
 import React from 'react'
-import { StyledProductCard } from '../../styles/ProductCard.styles'
-import { Product } from '../../hooks/useProductsHook'
-import { formatPrice } from '../../utils/FormatPrice'
+
 
 export interface ProductCardProps extends Product {
   id: string

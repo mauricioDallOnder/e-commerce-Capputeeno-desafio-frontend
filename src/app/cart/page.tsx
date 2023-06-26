@@ -2,22 +2,13 @@
 import React, { useState } from 'react'
 import { RootState } from '@/redux/Store'
 import { useSelector } from 'react-redux'
-import {
-  CartList,
-  CartListContainer,
-  CartResultContainer,
-  CartContainer,
-  Divider,
-  CartPageContainer,
-  ShopBtn,
-  TotalItem,
-} from '../../../styles/CartPage.styles'
 import BackButton from '@/components/BackButton'
 import CartItem from '@/components/CartItem'
 import { useRouter } from 'next/navigation'
-import { formatPrice } from '../../../utils/FormatPrice'
 import ProgressBar from '@ramonak/react-progress-bar'
 import { Helmet } from 'react-helmet'
+import { CartPageContainer, CartContainer, CartListContainer, CartList, CartResultContainer, TotalItem, Divider, ShopBtn } from '@/styles/CartPage.styles'
+import { formatPrice } from '@/utils/FormatPrice'
 
 export default function ShoppingCart() {
   const router = useRouter()

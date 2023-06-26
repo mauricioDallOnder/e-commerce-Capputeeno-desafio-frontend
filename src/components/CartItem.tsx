@@ -8,13 +8,11 @@ import {
 import { useDispatch } from 'react-redux'
 
 import { Trash } from 'phosphor-react'
-import { formatPrice } from '../../utils/FormatPrice'
+
 import React, { useState } from 'react'
-import {
-  CardContainer,
-  CartItemContainer,
-  SelectQuantity,
-} from '../../styles/CartItem.styles'
+import { CartItemContainer, CardContainer, SelectQuantity } from '@/styles/CartItem.styles'
+import { formatPrice } from '@/utils/FormatPrice'
+
 
 interface ProducsProps {
   productId: string

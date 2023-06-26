@@ -1,26 +1,16 @@
 /* eslint-disable jsx-a11y/alt-text */
 'use client'
-
 import { usePathname } from 'next/navigation'
 import { addProducts } from '@/redux/features/ProductSlice'
-import { useAppDispatch } from '../../../../hooks/Reduxhooks'
-import { useProducts } from '../../../../hooks/useProductsHook'
 import { addToCart } from '@/redux/features/ShoppingCartSlice'
-import {
-  BoxDescription,
-  DescriptionSection,
-  HeaderSection,
-  ProductArticle,
-  ProductBoxContainer,
-  ProductFigure,
-  ProductFooter,
-  ProductInfo,
-} from '../../../../styles/DescriptionPage.styles'
 import CartIconWhite from '@/assets/icons/CartIconWhite'
 import BackButton from '@/components/BackButton'
-import { formatPrice } from '../../../../utils/FormatPrice'
 import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
+import { useAppDispatch } from '@/hooks/Reduxhooks'
+import { useProducts } from '@/hooks/useProductsHook'
+import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '@/styles/DescriptionPage.styles'
+import { formatPrice } from '@/utils/FormatPrice'
 
 export default function ProductPage() {
   const pathname = usePathname()

@@ -1,5 +1,5 @@
+import { Product } from '@/hooks/useProductsHook'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Product } from '../../../hooks/useProductsHook'
 
 export type ShoppingCartProps = {
   cartQuantity: number

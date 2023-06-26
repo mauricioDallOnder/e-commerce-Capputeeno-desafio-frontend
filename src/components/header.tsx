@@ -1,19 +1,13 @@
 /* eslint-disable camelcase */
 'use client'
-import {
-  SearchInputContainer,
-  StyledHeaderContainer,
-  StyledLogoContainer,
-  StyledNavContainer,
-  StyledSearchInput,
-} from '../../styles/Header.styles'
 import { Saira_Stencil_One } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import CartControl from './CartCount'
-import { useAppDispatch } from '../../hooks/Reduxhooks'
 import { ChangeEvent, useState } from 'react'
 import { setFilter } from '@/redux/features/ProductSlice'
+import { SearchInputContainer, StyledHeaderContainer, StyledLogoContainer, StyledNavContainer, StyledSearchInput } from '@/styles/Header.styles'
+import { useAppDispatch } from '@/hooks/Reduxhooks'
 
 const sairaStencil = Saira_Stencil_One({
   weight: '400',

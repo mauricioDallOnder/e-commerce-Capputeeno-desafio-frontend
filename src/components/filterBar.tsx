@@ -1,13 +1,8 @@
 import React, { useState } from 'react'
-import {
-  ActiveBar,
-  ButtonContainer,
-  StyledButton,
-  StyledNavigation,
-} from '../../styles/FilterBar.styles'
-import { useAppDispatch } from '../../hooks/Reduxhooks'
 import { setFilterCategory } from '@/redux/features/ProductSlice'
 import { DropDownMenu } from './DropDownFilter'
+import { useAppDispatch } from '@/hooks/Reduxhooks'
+import { StyledNavigation, ButtonContainer, StyledButton, ActiveBar } from '@/styles/FilterBar.styles'
 
 export function FilterBar() {
   const [selectedButton, setSelectedButton] = useState('todos os produtos')

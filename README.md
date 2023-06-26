@@ -25,6 +25,18 @@
 
 <p>You can now access <a href="http://localhost:3000">localhost:3000</a> in your browser.</p>
 
+<h2>How to run e2e tests</h2>
+
+<ol>
+  <li>In the root folder of the project, in the terminal type:<br><pre>npx cypress open</pre></li>
+  <li>In your browser choose between the options:<br><img src="https://firebasestorage.googleapis.com/v0/b/geradorimagens-27342.appspot.com/o/Screenshot%202023-06-26%20at%2018.44.17.png?alt=media&token=9c1bb06a-2a39-4a12-9ca0-af597de288c0"/></li>
+  <li>Choose the browser to run the tests:<br><img src="https://firebasestorage.googleapis.com/v0/b/geradorimagens-27342.appspot.com/o/Screenshot%202023-06-26%20at%2018.44.34.png?alt=media&token=c75f1a0e-b454-4487-92af-f924a8d1cf78"/></li>
+  <li>Choose the file to test:<br> <img src="https://firebasestorage.googleapis.com/v0/b/geradorimagens-27342.appspot.com/o/Screenshot%202023-06-26%20at%2018.45.54.png?alt=media&token=9a793c31-5b47-447f-bdfa-48e7d3f1cf8b"/> <br></li>
+  <li>Check the test results<br><img src="https://firebasestorage.googleapis.com/v0/b/geradorimagens-27342.appspot.com/o/Screenshot%202023-06-26%20at%2018.46.38.png?alt=media&token=0ea753a9-5c1d-4614-921e-108634d0e54f"/></li>
+</ol>
+
+
+
 <h2>Evaluation criteria</h2>
 
 <p>This project was developed according to the following evaluation criteria:</p>
@@ -41,6 +53,8 @@
 </ul>
 
 <h2>Notes</h2>
+
+<p>In this project, to manage the local storage, Redux Persist was used. This library allows you to save the state of redux in a local storage, Therefore, even after refreshing the browser, the site state will still be preserved</p>
 
 <p>If you encounter any issues while installing or running the project, please open an issue in this repository.</p>
 

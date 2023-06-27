@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { setFilterCategory } from '@/redux/features/productSlice'
-import { DropDownMenu } from './dropDownFilter'
+import { DropDownMenu } from './dropdownFilter'
 import { useAppDispatch } from '@/hooks/reduxhooks'
 import { StyledNavigation, ButtonContainer, StyledButton, ActiveBar } from '@/styles/FilterBarStyles'
 

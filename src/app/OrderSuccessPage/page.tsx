@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Helmet } from 'react-helmet'
 import { MapPin, Clock, CurrencyDollar } from 'phosphor-react'
-import { InfoWithIcon } from '@/assets/icons/InfoWithIcon'
+import { InfoWithIcon } from '@/src/assets/icons/InfoWithIcon'
 import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
 import BackButton from '@/components/BackButton'
 

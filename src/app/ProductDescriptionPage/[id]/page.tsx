@@ -3,14 +3,14 @@
 import { usePathname } from 'next/navigation'
 import { addProducts } from '@/redux/features/productSlice'
 import CartIconWhite from '@/assets/icons/CartIconWhite'
-import BackButton from '../../../components/backButton'
+import BackButton from '../../../components/BackButton'
 import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
 import { useAppDispatch } from '@/hooks/reduxhooks'
 import { useProducts } from '@/hooks/useProductsHook'
 import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '@/styles/DescriptionPageStyles'
 import { formatPrice } from '@/utils/FormatPrice'
-import { addToCart } from '../../../redux/features/shoppingCartSlice'
+import { addToCart } from '../../../redux/features/ShoppingCartSlice'
 
 export default function ProductPage() {
   const pathname = usePathname()

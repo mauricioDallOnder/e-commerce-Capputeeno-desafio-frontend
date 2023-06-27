@@ -9,8 +9,8 @@ import {
 import Link from 'next/link'
 import { ProductCard } from './productCard'
 import { useProducts } from '@/hooks/useProductsHook'
-import { Pagination } from './pagination'
-import { useAppSelector, useAppDispatch } from '@/hooks/reduxhooks'
+import { Pagination } from './Pagination'
+import { useAppSelector, useAppDispatch } from '@/hooks/Reduxhooks'
 
 export function ProductList() {
   const products = useAppSelector(selectProducts)

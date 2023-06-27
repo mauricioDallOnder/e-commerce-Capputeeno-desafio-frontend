@@ -1,5 +1,6 @@
 import { Product } from '@/hooks/useProductsHook'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { RootState } from '../store'
 
 export type ShoppingCartProps = {
   cartQuantity: number
@@ -54,4 +55,13 @@ export const {
   addToCart,
   clearCart,
 } = shoppingCart.actions
+
+export const selectremoveFromCart = (state: RootState) => state.shoppingCart.items
+export const selectCartItemQuantity = (state: RootState) => state.shoppingCart.cartQuantity
+export const selectCartTotalQuantity = (state: RootState) =>
+state.shoppingCart.cartQuantity
+export const selectaddToCart = (state: RootState) => state.shoppingCart.items
+export const seleclearCart = (state: RootState) => state.shoppingCart.items
+
+
 export default shoppingCart.reducer

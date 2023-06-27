@@ -1,6 +1,6 @@
 
 import { CartIcon } from '@/assets/icons/cartIcon'
-import { useAppSelector } from '@/hooks/reduxhooks'
+import { useAppSelector } from '@/hooks/Reduxhooks'
 import { CartStyle, Elipse } from '@/styles/CartIconStyles'
 import Link from 'next/link'
 

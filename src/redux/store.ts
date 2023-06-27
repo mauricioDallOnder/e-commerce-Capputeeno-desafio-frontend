@@ -10,7 +10,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // padrão é o local storage no navegador
-import shoppingCartReducer from './features/shoppingCartSlice'
+import shoppingCartReducer from './features/ShoppingCartSlice'
 import productSlice from './features/productSlice'
 import { combineReducers } from 'redux'
 

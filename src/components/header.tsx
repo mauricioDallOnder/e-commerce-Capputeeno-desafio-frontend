@@ -3,7 +3,7 @@
 import { Saira_Stencil_One } from 'next/font/google'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import CartControl from './cartCount'
+import CartControl from './CartCount'
 import { ChangeEvent, useState } from 'react'
 import { setFilter } from '@/redux/features/productSlice'
 import { SearchInputContainer, StyledHeaderContainer, StyledLogoContainer, StyledNavContainer, StyledSearchInput } from '@/styles/HeaderStyles'

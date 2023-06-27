@@ -4,7 +4,7 @@ import {
   setCartItemQuantity,
   setCartTotalQuantity,
   removeFromCart,
-} from '@/redux/features/shoppingCartSlice'
+} from '@/redux/features/ShoppingCartSlice'
 import { useDispatch } from 'react-redux'
 
 import { Trash } from 'phosphor-react'

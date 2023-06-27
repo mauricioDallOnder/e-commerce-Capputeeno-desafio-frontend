@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { addProducts } from '@/redux/features/productSlice'
-import { useAppDispatch } from './reduxhooks'
+import { useAppDispatch } from './Reduxhooks'
 
 export interface Product {
   id: string

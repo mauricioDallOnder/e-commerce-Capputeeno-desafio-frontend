@@ -7,7 +7,7 @@ import { InfoWithIcon } from '@/assets/icons/InfoWithIcon'
 import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
 import BackButton from '@/components/BackButton'
 
-import { clearCart } from '@/redux/features/shoppingCartSlice'
+import { clearCart } from '@/redux/features/ShoppingCartSlice'
 import { OrderConfirmedContainer, CenteredTextContainer, TitleText, RegularText, OrderDetailsContainer } from '@/styles/OrderSuccessPageStyles'
 
 export default function OrderConfirmedPage() {

@@ -7,7 +7,7 @@ import {
   selectSortMethod,
   SortMethod,
 } from '@/redux/features/productSlice'
-import { useAppSelector, useAppDispatch } from '@/hooks/reduxhooks'
+import { useAppSelector, useAppDispatch } from '@/hooks/Reduxhooks'
 import { useProducts } from '@/hooks/useProductsHook'
 import { FilterContainer, PriorityFilter, PriorityFilterItem } from '@/styles/DropdownStyles'
 

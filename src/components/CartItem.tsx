@@ -1,17 +1,13 @@
 /* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/alt-text */
-import {
-  setCartItemQuantity,
-  setCartTotalQuantity,
-  removeFromCart,
-} from '@/redux/features/ShoppingCartSlice'
+
 import { useDispatch } from 'react-redux'
-
 import { Trash } from 'phosphor-react'
-
 import React, { useState } from 'react'
-import { CartItemContainer, CardContainer, SelectQuantity } from '@/styles/CartItemStyles'
-import { formatPrice } from '@/utils/FormatPrice'
+import { setCartItemQuantity, setCartTotalQuantity, removeFromCart } from '../redux/features/ShoppingCartSlice'
+import { CartItemContainer, CardContainer, SelectQuantity } from '../styles/CartItemStyles'
+import { formatPrice } from '../utils/FormatPrice'
+
 
 
 interface ProducsProps {

@@ -1,16 +1,11 @@
 import React, { useEffect } from 'react'
-import {
-  addProducts,
-  selectFilter,
-  selectProducts,
-  selectFilterCategory,
-} from '@/redux/features/productSlice'
-
 import Link from 'next/link'
 import { ProductCard } from './productCard'
-import { useProducts } from '@/hooks/useProductsHook'
 import { Pagination } from './Pagination'
-import { useAppSelector, useAppDispatch } from '@/hooks/Reduxhooks'
+import { useAppSelector, useAppDispatch } from '../hooks/Reduxhooks'
+import { useProducts } from '../hooks/useProductsHook'
+import { selectProducts, selectFilter, selectFilterCategory, addProducts } from '../redux/features/productSlice'
+
 
 export function ProductList() {
   const products = useAppSelector(selectProducts)

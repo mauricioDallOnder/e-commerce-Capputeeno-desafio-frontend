@@ -1,16 +1,10 @@
-import { ArrowIcon } from '@/assets/icons/arrowIcon'
-import { useEffect, useRef, useState } from 'react'
-import {
-  addProducts,
-  setSortMethod,
-  sortProducts,
-  selectSortMethod,
-  SortMethod,
-} from '@/redux/features/productSlice'
-import { useAppSelector, useAppDispatch } from '@/hooks/Reduxhooks'
-import { useProducts } from '@/hooks/useProductsHook'
-import { FilterContainer, PriorityFilter, PriorityFilterItem } from '@/styles/DropdownStyles'
 
+import { useEffect, useRef, useState } from 'react'
+import { ArrowIcon } from '../assets/icons/arrowIcon'
+import { useAppSelector, useAppDispatch } from '../hooks/Reduxhooks'
+import { useProducts } from '../hooks/useProductsHook'
+import { selectSortMethod, addProducts, SortMethod, setSortMethod, sortProducts } from '../redux/features/productSlice'
+import { FilterContainer, PriorityFilter, PriorityFilterItem } from '../styles/DropdownStyles'
 
 export function DropDownMenu() {
   const [isOpen, setIsOpen] = useState(false)

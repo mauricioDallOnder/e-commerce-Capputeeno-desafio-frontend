@@ -1,8 +1,9 @@
 /* eslint-disable no-undef */
-import { DropDownMenu } from '@/components/dropDownFilter'
-import { store } from '@/redux/store'
+
 import { mount } from 'cypress/react18'
 import { Provider } from 'react-redux'
+import { DropDownMenu } from '../../src/components/dropdownFilter'
+import { store } from '../../src/redux/store'
 
 describe('DropDownMenu Component', () => {
   beforeEach(() => {

@@ -3,12 +3,12 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Helmet } from 'react-helmet'
 import { MapPin, Clock, CurrencyDollar } from 'phosphor-react'
-import { InfoWithIcon } from '@/src/assets/icons/InfoWithIcon'
-import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
-import BackButton from '@/components/BackButton'
 
-import { clearCart } from '@/redux/features/ShoppingCartSlice'
-import { OrderConfirmedContainer, CenteredTextContainer, TitleText, RegularText, OrderDetailsContainer } from '@/styles/OrderSuccessPageStyles'
+import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
+import { InfoWithIcon } from '../../assets/icons/InfoWithIcon'
+import BackButton from '../../components/BackButton'
+import { clearCart } from '../../redux/features/ShoppingCartSlice'
+import { OrderConfirmedContainer, CenteredTextContainer, TitleText, RegularText, OrderDetailsContainer } from '../../styles/OrderSuccessPageStyles'
 
 export default function OrderConfirmedPage() {
   const dispatch = useDispatch()

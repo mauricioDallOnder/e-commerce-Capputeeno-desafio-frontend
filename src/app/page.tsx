@@ -1,8 +1,9 @@
 'use client'
 
-import { FilterBar } from '@/components/filterBar'
-import { ProductList } from '@/components/productList'
+
 import { Helmet } from 'react-helmet'
+import { FilterBar } from '../components/filterBar'
+import { ProductList } from '../components/productList'
 
 export default function Home() {
   return (

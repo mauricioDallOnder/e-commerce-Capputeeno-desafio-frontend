@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
-import { CaretLeft, CaretRight } from 'phosphor-react'
-import { Product } from '../hooks/useProductsHook'
-import { PaginationList, PaginationButton, ProductCardContainer } from '../styles/ProductListStyles'
-
+import React, { useState } from "react";
+import { CaretLeft, CaretRight } from "phosphor-react";
+import { Product } from "../hooks/useProductsHook";
+import {
+  PaginationList,
+  PaginationButton,
+  ProductCardContainer,
+} from "../styles/ProductListStyles";
 
 interface PaginationProps {
-  products: Product[]
-  itemsPerPage: number
-  renderProduct: (product: Product) => React.JSX.Element
+  products: Product[];
+  itemsPerPage: number;
+  renderProduct: (product: Product) => React.JSX.Element;
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
@@ -15,34 +18,34 @@ export const Pagination: React.FC<PaginationProps> = ({
   itemsPerPage,
   renderProduct,
 }) => {
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handlePageClick = (pageNumber: number) => {
-    setCurrentPage(pageNumber)
-  }
+    setCurrentPage(pageNumber);
+  };
 
   const handleNextClick = () => {
     if (currentPage < Math.ceil(products.length / itemsPerPage) - 1) {
-      setCurrentPage(currentPage + 1)
+      setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
   const handlePreviousClick = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1)
+      setCurrentPage(currentPage - 1);
     }
-  }
+  };
 
-  const startIndex = currentPage * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const currentProducts = products.slice(startIndex, endIndex)
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProducts = products.slice(startIndex, endIndex);
 
   return (
     <nav>
       <PaginationList>
         {Array.from(
           { length: Math.ceil(products.length / itemsPerPage) },
-          (_, i) => i,
+          (_, i) => i
         ).map((number) => (
           <li key={number}>
             <PaginationButton
@@ -80,5 +83,5 @@ export const Pagination: React.FC<PaginationProps> = ({
         </ProductCardContainer>
       </section>
     </nav>
-  )
-}
+  );
+};

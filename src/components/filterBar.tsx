@@ -1,26 +1,30 @@
-import React, { useState } from 'react'
-import { useAppDispatch } from '../hooks/Reduxhooks'
-import { setFilterCategory } from '../redux/features/productSlice'
-import { StyledNavigation, ButtonContainer, StyledButton, ActiveBar } from '../styles/FilterBarStyles'
-import { DropDownMenu } from './dropdownFilter'
-
+import React, { useState } from "react";
+import { useAppDispatch } from "../hooks/Reduxhooks";
+import { setFilterCategory } from "../redux/features/productSlice";
+import {
+  StyledNavigation,
+  ButtonContainer,
+  StyledButton,
+  ActiveBar,
+} from "../styles/FilterBarStyles";
+import { DropDownMenu } from "./dropdownFilter";
 
 export function FilterBar() {
-  const [selectedButton, setSelectedButton] = useState('todos os produtos')
-  const dispatch = useAppDispatch()
+  const [selectedButton, setSelectedButton] = useState("todos os produtos");
+  const dispatch = useAppDispatch();
 
   const handleClick = (category: string, button: string) => {
-    setSelectedButton(button)
-    dispatch(setFilterCategory(category))
-  }
+    setSelectedButton(button);
+    dispatch(setFilterCategory(category));
+  };
 
   return (
     <StyledNavigation data-category={selectedButton}>
-      <div style={{ display: 'flex', gap: '40px' }}>
+      <div style={{ display: "flex", gap: "40px" }}>
         {[
-          { label: 'todos os produtos', category: 'all' },
-          { label: 'camisetas', category: 't-shirts' },
-          { label: 'canecas', category: 'mugs' },
+          { label: "todos os produtos", category: "all" },
+          { label: "camisetas", category: "t-shirts" },
+          { label: "canecas", category: "mugs" },
         ].map((button) => (
           <ButtonContainer key={button.label}>
             <StyledButton
@@ -36,5 +40,5 @@ export function FilterBar() {
       </div>
       <DropDownMenu />
     </StyledNavigation>
-  )
+  );
 }

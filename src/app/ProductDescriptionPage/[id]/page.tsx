@@ -1,42 +1,50 @@
 /* eslint-disable jsx-a11y/alt-text */
-'use client'
-import { usePathname } from 'next/navigation'
-import BackButton from '../../../components/BackButton'
-import { Helmet } from 'react-helmet'
-import { useEffect } from 'react'
-import CartIconWhite from '../../../assets/icons/CartIconWhite'
-import { useAppDispatch } from '../../../hooks/Reduxhooks'
-import { useProducts } from '../../../hooks/useProductsHook'
-import { addToCart } from '../../../redux/features/ShoppingCartSlice'
-import { addProducts } from '../../../redux/features/productSlice'
-import { ProductBoxContainer, BoxDescription, ProductArticle, ProductFigure, ProductInfo, HeaderSection, DescriptionSection, ProductFooter } from '../../../styles/DescriptionPageStyles'
-import { formatPrice } from '../../../utils/FormatPrice'
-
+"use client";
+import { usePathname } from "next/navigation";
+import BackButton from "../../../components/BackButton";
+import { Helmet } from "react-helmet";
+import { useEffect } from "react";
+import CartIconWhite from "../../../assets/icons/CartIconWhite";
+import { useAppDispatch } from "../../../hooks/Reduxhooks";
+import { useProducts } from "../../../hooks/useProductsHook";
+import { addToCart } from "../../../redux/features/ShoppingCartSlice";
+import { addProducts } from "../../../redux/features/productSlice";
+import {
+  ProductBoxContainer,
+  BoxDescription,
+  ProductArticle,
+  ProductFigure,
+  ProductInfo,
+  HeaderSection,
+  DescriptionSection,
+  ProductFooter,
+} from "../../../styles/DescriptionPageStyles";
+import { formatPrice } from "../../../utils/FormatPrice";
 
 export default function ProductPage() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   // Obtem a id do produto a partir da URL, divide a url em 2 e paga ultima parte que é a ID
-  const id = pathname.split('/').pop()
+  const id = pathname.split("/").pop();
 
-  const productsList = useProducts()
-  const dispatch = useAppDispatch()
+  const productsList = useProducts();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(addProducts(productsList))
-  }, [dispatch, productsList])
+    dispatch(addProducts(productsList));
+  }, [dispatch, productsList]);
 
   // Filtrar a lista de produtos para obter apenas o produto com a ID da URL
-  const product = productsList.find((item) => item.id === id)!
+  const product = productsList.find((item) => item.id === id)!;
 
   // adicionar item ao carrinho:
   const handleAddToCart = () => {
-    dispatch(addToCart(product))
-  }
+    dispatch(addToCart(product));
+  };
 
   // Caso o produto não seja encontrado ou ainda não tenha sido carregado
   if (!product) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -85,5 +93,5 @@ export default function ProductPage() {
         </BoxDescription>
       </ProductBoxContainer>
     </>
-  )
+  );
 }

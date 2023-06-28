@@ -1,64 +1,73 @@
-
-import { useEffect, useRef, useState } from 'react'
-import { ArrowIcon } from '../assets/icons/arrowIcon'
-import { useAppSelector, useAppDispatch } from '../hooks/Reduxhooks'
-import { useProducts } from '../hooks/useProductsHook'
-import { selectSortMethod, addProducts, SortMethod, setSortMethod, sortProducts } from '../redux/features/productSlice'
-import { FilterContainer, PriorityFilter, PriorityFilterItem } from '../styles/DropdownStyles'
+import { useEffect, useRef, useState } from "react";
+import { ArrowIcon } from "../assets/icons/arrowIcon";
+import { useAppSelector, useAppDispatch } from "../hooks/Reduxhooks";
+import { useProducts } from "../hooks/useProductsHook";
+import {
+  selectSortMethod,
+  addProducts,
+  SortMethod,
+  setSortMethod,
+  sortProducts,
+} from "../redux/features/productSlice";
+import {
+  FilterContainer,
+  PriorityFilter,
+  PriorityFilterItem,
+} from "../styles/DropdownStyles";
 
 export function DropDownMenu() {
-  const [isOpen, setIsOpen] = useState(false)
-  const sortMethod = useAppSelector(selectSortMethod)
+  const [isOpen, setIsOpen] = useState(false);
+  const sortMethod = useAppSelector(selectSortMethod);
 
-  const productsList = useProducts()
-  const dispatch = useAppDispatch()
-  const node = useRef<HTMLDivElement>(null) // Referência ao nó do dropdown
+  const productsList = useProducts();
+  const dispatch = useAppDispatch();
+  const node = useRef<HTMLDivElement>(null); // Referência ao nó do dropdown
 
   useEffect(() => {
-    dispatch(addProducts(productsList))
-  }, [dispatch, productsList])
+    dispatch(addProducts(productsList));
+  }, [dispatch, productsList]);
 
   // Adiciona um event listener quando o componente é montado e o remove quando é desmontado
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       // Verifica se o clique foi fora do nó do dropdown(se for fora fecha o menu)
       if (node.current && !node.current.contains(e.target as Node)) {
-        setIsOpen(false)
+        setIsOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       // Limpa o event listener no desmonte do componente
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleSortMethodChange = (newMethod: SortMethod) => {
-    dispatch(setSortMethod(newMethod))
-    if (newMethod !== '') {
-      dispatch(sortProducts(newMethod))
+    dispatch(setSortMethod(newMethod));
+    if (newMethod !== "") {
+      dispatch(sortProducts(newMethod));
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const getSortMethodLabel = (method: SortMethod) => {
     switch (method) {
-      case '':
-        return 'Organizar por'
-      case 'novidades':
-        return 'Novidades'
-      case 'preco-maior':
-        return 'Preço: Maior - menor'
-      case 'preco-menor':
-        return 'Preço: Menor - maior'
-      case 'mais-vendidos':
-        return 'Mais vendidos'
+      case "":
+        return "Organizar por";
+      case "novidades":
+        return "Novidades";
+      case "preco-maior":
+        return "Preço: Maior - menor";
+      case "preco-menor":
+        return "Preço: Menor - maior";
+      case "mais-vendidos":
+        return "Mais vendidos";
       default:
-        return 'Organizar por'
+        return "Organizar por";
     }
-  }
+  };
 
   return (
     <FilterContainer ref={node} data-testid="filter-container">
@@ -70,36 +79,36 @@ export function DropDownMenu() {
         <PriorityFilter data-testid="priority-filter">
           <PriorityFilterItem
             data-testid="sort-by-default"
-            onClick={() => handleSortMethodChange('')}
+            onClick={() => handleSortMethodChange("")}
           >
             Organizar por
           </PriorityFilterItem>
           <PriorityFilterItem
             data-testid="sort-by-novidades"
-            onClick={() => handleSortMethodChange('novidades')}
+            onClick={() => handleSortMethodChange("novidades")}
           >
             Novidades
           </PriorityFilterItem>
           <PriorityFilterItem
             data-testid="sort-by-preco-maior"
-            onClick={() => handleSortMethodChange('preco-maior')}
+            onClick={() => handleSortMethodChange("preco-maior")}
           >
             Preço: Maior - menor
           </PriorityFilterItem>
           <PriorityFilterItem
             data-testid="sort-by-preco-menor"
-            onClick={() => handleSortMethodChange('preco-menor')}
+            onClick={() => handleSortMethodChange("preco-menor")}
           >
             Preço: Menor - maior
           </PriorityFilterItem>
           <PriorityFilterItem
             data-testid="sort-by-mais-vendidos"
-            onClick={() => handleSortMethodChange('mais-vendidos')}
+            onClick={() => handleSortMethodChange("mais-vendidos")}
           >
             Mais vendidos
           </PriorityFilterItem>
         </PriorityFilter>
       )}
     </FilterContainer>
-  )
+  );
 }

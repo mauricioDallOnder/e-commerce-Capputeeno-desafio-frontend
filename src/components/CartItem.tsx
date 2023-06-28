@@ -1,22 +1,28 @@
 /* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/alt-text */
 
-import { useDispatch } from 'react-redux'
-import { Trash } from 'phosphor-react'
-import React, { useState } from 'react'
-import { setCartItemQuantity, setCartTotalQuantity, removeFromCart } from '../redux/features/ShoppingCartSlice'
-import { CartItemContainer, CardContainer, SelectQuantity } from '../styles/CartItemStyles'
-import { formatPrice } from '../utils/FormatPrice'
-
-
+import { useDispatch } from "react-redux";
+import { Trash } from "phosphor-react";
+import React, { useState } from "react";
+import {
+  setCartItemQuantity,
+  setCartTotalQuantity,
+  removeFromCart,
+} from "../redux/features/ShoppingCartSlice";
+import {
+  CartItemContainer,
+  CardContainer,
+  SelectQuantity,
+} from "../styles/CartItemStyles";
+import { formatPrice } from "../utils/FormatPrice";
 
 interface ProducsProps {
-  productId: string
-  name: string
-  image_url: string
-  description: string
-  quantity: number
-  price_in_cents: number
+  productId: string;
+  name: string;
+  image_url: string;
+  description: string;
+  quantity: number;
+  price_in_cents: number;
 }
 
 export default function CartItem({
@@ -27,29 +33,29 @@ export default function CartItem({
   image_url,
   productId,
 }: ProducsProps) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const handleQuantityChange = (productId: string, quantity: number) => {
-    dispatch(setCartItemQuantity({ productId, quantity }))
-    dispatch(setCartTotalQuantity())
-  }
+    dispatch(setCartItemQuantity({ productId, quantity }));
+    dispatch(setCartTotalQuantity());
+  };
   const handleRemoveFromCart = (productId: string) => {
-    dispatch(removeFromCart(productId))
-    dispatch(setCartTotalQuantity())
-  }
-  const [isHover, setIsHover] = useState(false)
+    dispatch(removeFromCart(productId));
+    dispatch(setCartTotalQuantity());
+  };
+  const [isHover, setIsHover] = useState(false);
   const TrashStyle = {
-    color: isHover ? '#DE3838' : '',
-  }
+    color: isHover ? "#DE3838" : "",
+  };
   const handleMouseEnter = () => {
-    setIsHover(true)
-  }
+    setIsHover(true);
+  };
   const handleMouseLeave = () => {
-    setIsHover(false)
-  }
+    setIsHover(false);
+  };
   return (
     <CartItemContainer role="listitem">
       <React.Fragment>
-        {' '}
+        {" "}
         <button
           onClick={() => handleRemoveFromCart(productId)}
           aria-label="Deletar"
@@ -83,5 +89,5 @@ export default function CartItem({
         </CardContainer>
       </React.Fragment>
     </CartItemContainer>
-  )
+  );
 }

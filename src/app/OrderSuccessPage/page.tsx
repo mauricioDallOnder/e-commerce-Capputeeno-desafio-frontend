@@ -1,21 +1,27 @@
-'use client'
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { Helmet } from 'react-helmet'
-import { MapPin, Clock, CurrencyDollar } from 'phosphor-react'
+"use client";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet";
+import { MapPin, Clock, CurrencyDollar } from "phosphor-react";
 
-import ConfirmedOrderIllustration from '../../assets/confirmed-order.svg'
-import { InfoWithIcon } from '../../assets/icons/InfoWithIcon'
-import BackButton from '../../components/BackButton'
-import { clearCart } from '../../redux/features/ShoppingCartSlice'
-import { OrderConfirmedContainer, CenteredTextContainer, TitleText, RegularText, OrderDetailsContainer } from '../../styles/OrderSuccessPageStyles'
+import ConfirmedOrderIllustration from "../../assets/confirmed-order.svg";
+import { InfoWithIcon } from "../../assets/icons/InfoWithIcon";
+import BackButton from "../../components/BackButton";
+import { clearCart } from "../../redux/features/ShoppingCartSlice";
+import {
+  OrderConfirmedContainer,
+  CenteredTextContainer,
+  TitleText,
+  RegularText,
+  OrderDetailsContainer,
+} from "../../styles/OrderSuccessPageStyles";
 
 export default function OrderConfirmedPage() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(clearCart())
-  }, [])
+    dispatch(clearCart());
+  }, []);
 
   return (
     <>
@@ -41,7 +47,7 @@ export default function OrderConfirmedPage() {
           <OrderDetailsContainer>
             <InfoWithIcon
               icon={<MapPin weight="fill" />}
-              iconBg={'#8047F8'}
+              iconBg={"#8047F8"}
               text={
                 <RegularText>
                   Entrega em <strong>Avenida Silva da Silva</strong>, Numero 23
@@ -52,7 +58,7 @@ export default function OrderConfirmedPage() {
             />
             <InfoWithIcon
               icon={<Clock weight="fill" />}
-              iconBg={'#DBAC2C'}
+              iconBg={"#DBAC2C"}
               text={
                 <RegularText>
                   Previsão de entrega:
@@ -63,7 +69,7 @@ export default function OrderConfirmedPage() {
             />
             <InfoWithIcon
               icon={<CurrencyDollar weight="fill" />}
-              iconBg={'#C47F17'}
+              iconBg={"#C47F17"}
               text={
                 <RegularText>
                   Tipo de pagamento:
@@ -78,5 +84,5 @@ export default function OrderConfirmedPage() {
         </section>
       </OrderConfirmedContainer>
     </>
-  )
+  );
 }

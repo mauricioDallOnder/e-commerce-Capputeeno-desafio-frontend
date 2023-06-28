@@ -9,7 +9,7 @@ export const ReturnButton = styled.button`
   font-size: 14px;
   line-height: 150%;
   color: var (--secondary-text);
-  background:transparent;
-  border:none;
+  background: transparent;
+  border: none;
   cursor: pointer;
 `

@@ -1,12 +1,12 @@
-"use client";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
-import ProgressBar from "@ramonak/react-progress-bar";
-import { Helmet } from "react-helmet";
-import BackButton from "../../components/BackButton";
-import CartItem from "../../components/CartItem";
-import { RootState } from "../../redux/store";
+'use client'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useRouter } from 'next/navigation'
+import ProgressBar from '@ramonak/react-progress-bar'
+import { Helmet } from 'react-helmet'
+import BackButton from '../../components/BackButton'
+import CartItem from '../../components/CartItem'
+import { RootState } from '../../redux/store'
 import {
   CartPageContainer,
   CartContainer,
@@ -16,51 +16,51 @@ import {
   TotalItem,
   Divider,
   ShopBtn,
-} from "../../styles/CartPageStyles";
-import { formatPrice } from "../../utils/FormatPrice";
+} from '../../styles/CartPageStyles'
+import { formatPrice } from '../../utils/FormatPrice'
 
 export default function ShoppingCart() {
-  const router = useRouter();
+  const router = useRouter()
 
   const { cartQuantity, items } = useSelector(
-    (state: RootState) => state.shoppingCart
-  );
-  const products = useSelector((state: RootState) => state.products.value);
+    (state: RootState) => state.shoppingCart,
+  )
+  const products = useSelector((state: RootState) => state.products.value)
 
   // Converta o frete para centavos
-  const frete = 4000;
+  const frete = 4000
 
   // Calcular o preço total dos itens no carrinho
   const totalprice = Object.entries(items).reduce(
     (total, [productId, quantity]) => {
-      const product = products.find((p) => p.id === productId);
-      return total + (product?.price_in_cents || 0) * quantity;
+      const product = products.find((p) => p.id === productId)
+      return total + (product?.price_in_cents || 0) * quantity
     },
-    0
-  );
+    0,
+  )
 
   // Verificar se existem itens no carrinho
-  const cartNotEmpty = Object.keys(items).length > 0;
+  const cartNotEmpty = Object.keys(items).length > 0
 
   // Calcular o total incluindo o frete, caso existam itens no carrinho
-  const totalPriceWithFreight = cartNotEmpty ? totalprice + frete : totalprice;
+  const totalPriceWithFreight = cartNotEmpty ? totalprice + frete : totalprice
 
   // Criar o estado de progresso
-  const [progress, setProgress] = useState(0);
-  const [buttonText, setButtonText] = useState("FINALIZAR COMPRA");
+  const [progress, setProgress] = useState(0)
+  const [buttonText, setButtonText] = useState('FINALIZAR COMPRA')
 
   async function handleCheckout() {
-    setProgress(0);
-    setButtonText("PROCESSANDO PEDIDO...");
+    setProgress(0)
+    setButtonText('PROCESSANDO PEDIDO...')
     const intervalId = setInterval(() => {
-      setProgress((prevProgress) => prevProgress + 15);
-    }, 1000);
-    setTimeout(() => clearInterval(intervalId), 9000);
+      setProgress((prevProgress) => prevProgress + 15)
+    }, 1000)
+    setTimeout(() => clearInterval(intervalId), 9000)
 
-    await new Promise((resolve) => setTimeout(resolve, 9000));
+    await new Promise((resolve) => setTimeout(resolve, 9000))
 
-    router.push("/OrderSuccessPage");
-    setButtonText("FINALIZAR COMPRA");
+    router.push('/OrderSuccessPage')
+    setButtonText('FINALIZAR COMPRA')
   }
 
   return (
@@ -84,7 +84,7 @@ export default function ShoppingCart() {
             </p>
             <CartList role="list">
               {Object.entries(items).map(([productId, quantity]) => {
-                const product = products.find((p) => p.id === productId);
+                const product = products.find((p) => p.id === productId)
                 return product ? (
                   <li role="listitem" key={productId}>
                     <CartItem
@@ -96,7 +96,7 @@ export default function ShoppingCart() {
                       price_in_cents={product.price_in_cents}
                     />
                   </li>
-                ) : null;
+                ) : null
               })}
             </CartList>
           </CartListContainer>
@@ -127,5 +127,5 @@ export default function ShoppingCart() {
         </CartContainer>
       </CartPageContainer>
     </>
-  );
+  )
 }

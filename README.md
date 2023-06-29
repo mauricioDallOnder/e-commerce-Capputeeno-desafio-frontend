@@ -60,7 +60,7 @@
 
 <h2>Deployment</h2>
 
-<p>The project is available at the following link: <a href="#">Deployment link</a></p>
+<p>The API of this project is hosted on Heroku its URL is: <a href="https://apiprodutos-a8b640cfd12e.herokuapp.com/graphql">API link</a></p>
 
 <h2>Author</h2>
 

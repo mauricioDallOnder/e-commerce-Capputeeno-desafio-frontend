@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-<p>This project is an e-commerce for the sale of mugs and t-shirts. Users will be able to browse through a product catalog with pagination, filter products by category, search for products by name, add and remove products from a shopping cart, and finalize the purchase.</p>
+<p>This project is an e-commerce for selling mugs and t-shirts. Users will be able to browse a catalog of products with pagination, filter products by category, search for products by name, add and remove products from a shopping cart and checkout. This project is part of the challenge created by Rocketseat. The link to access the full challenge is: https://github.com/Rocketseat/frontend-challenge</p>
 
 <h2>Technologies used</h2>
 

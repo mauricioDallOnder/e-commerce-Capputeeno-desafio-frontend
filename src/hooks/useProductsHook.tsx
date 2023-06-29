@@ -26,7 +26,7 @@ export function useProducts() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         query: `{
-          allProducts {
+          products {
             id
             name
             description
@@ -41,8 +41,8 @@ export function useProducts() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data.data.allProducts)
-        dispatch(addProducts(data.data.allProducts))
+        setProducts(data.data.products)
+        dispatch(addProducts(data.data.products))
       })
       .catch((error) => {
         console.error('Error:', error)

@@ -14,7 +14,7 @@ export interface Product {
   sales?: number
 }
 // hook to get data from graphql api
-const API_URL = 'https://apiprodutos-a8b640cfd12e.herokuapp.com/'
+const API_URL = 'https://apiprodutos-a8b640cfd12e.herokuapp.com/graphql'
 
 export function useProducts() {
   const dispatch = useAppDispatch()
